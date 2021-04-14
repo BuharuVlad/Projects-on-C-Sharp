@@ -51,38 +51,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCars.cs">
+    <Compile Include="Interfaces\AddCars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCars.Designer.cs">
+    <Compile Include="Interfaces\AddCars.Designer.cs">
       <DependentUpon>AddCars.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddDrivers.cs">
+    <Compile Include="Interfaces\AddDrivers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddDrivers.Designer.cs">
+    <Compile Include="Interfaces\AddDrivers.Designer.cs">
       <DependentUpon>AddDrivers.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddRute.cs">
+    <Compile Include="Interfaces\AddRute.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddRute.Designer.cs">
+    <Compile Include="Interfaces\AddRute.Designer.cs">
       <DependentUpon>AddRute.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTransport.cs">
+    <Compile Include="Interfaces\AddTransport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTransport.Designer.cs">
+    <Compile Include="Interfaces\AddTransport.Designer.cs">
       <DependentUpon>AddTransport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cars.cs" />
-    <Compile Include="Dashbord.cs">
+    <Compile Include="Classes\Car.cs" />
+    <Compile Include="Interfaces\MainInterface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashbord.Designer.cs">
-      <DependentUpon>Dashbord.cs</DependentUpon>
+    <Compile Include="Interfaces\MainInterface.Designer.cs">
+      <DependentUpon>MainInterface.cs</DependentUpon>
     </Compile>
-    <Compile Include="Drivers.cs" />
+    <Compile Include="Classes\Driver.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,22 +91,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rutes.cs" />
-    <Compile Include="Transports.cs" />
-    <EmbeddedResource Include="AddCars.resx">
+    <Compile Include="Classes\Rute.cs" />
+    <Compile Include="Classes\Transport.cs" />
+    <EmbeddedResource Include="Interfaces\AddCars.resx">
       <DependentUpon>AddCars.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddDrivers.resx">
+    <EmbeddedResource Include="Interfaces\AddDrivers.resx">
       <DependentUpon>AddDrivers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddRute.resx">
+    <EmbeddedResource Include="Interfaces\AddRute.resx">
       <DependentUpon>AddRute.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTransport.resx">
+    <EmbeddedResource Include="Interfaces\AddTransport.resx">
       <DependentUpon>AddTransport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashbord.resx">
-      <DependentUpon>Dashbord.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\MainInterface.resx">
+      <DependentUpon>MainInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -121,10 +121,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="libraryManagement.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="bin\Debug\libraryManagement.db" />
+    <None Include="bin\Debug\Cars.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,6 +140,7 @@
   <ItemGroup>
     <None Include="rsz_truck-logo-design-inspiration_20029-91.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

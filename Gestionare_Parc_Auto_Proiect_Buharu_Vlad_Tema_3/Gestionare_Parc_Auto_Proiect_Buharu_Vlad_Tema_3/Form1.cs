@@ -50,7 +50,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
-                var  queryString = "SELECT * from loginTable where username  = '" + txtUsername.Text + "' and pass = '" + txtPassword.Text + "'";
+                var  queryString = "SELECT * from loginTable where Username  = '" + txtUsername.Text + "' and Password = '" + txtPassword.Text + "'";
                 var commnad = new SQLiteCommand(queryString, connection);
                 //"SELECT * from loginTable where username  = '" + txtUsername.Text + "' and pass = '" + txtPassword.Text + "'";
                 SQLiteDataAdapter yes = new SQLiteDataAdapter(commnad);
