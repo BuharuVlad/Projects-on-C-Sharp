@@ -61,21 +61,29 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
         private void dtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtUpdateIdCar.Text = dtGridList.SelectedRows[0].Cells[0].Value.ToString();
-            txtUpdateNameCar.Text = dtGridList.SelectedRows[0].Cells[1].Value.ToString();
-            txtUpdateModelCar.Text = dtGridList.SelectedRows[0].Cells[2].Value.ToString();
+            try
+            {
+                txtUpdateIdCar.Text = dtGridList.SelectedRows[0].Cells[0].Value.ToString();
+                txtUpdateNameCar.Text = dtGridList.SelectedRows[0].Cells[1].Value.ToString();
+                txtUpdateModelCar.Text = dtGridList.SelectedRows[0].Cells[2].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Click only in the left side of the window, next to id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnUpdateCar_Click(object sender, EventArgs e)
         {
             string query = "update Cars set NameCar = '"+txtUpdateNameCar+"', ModelCar = '"+txtUpdateModelCar+"' where id = '" + txtUpdateIdCar + "' ;";
-            InsertUpdateCar(query);
+            InsertUpdateDeleteCar(query);
+            DisplayCar();
         }
 
         private void btnDeleteCar_Click(object sender, EventArgs e)
         {
             string query = "delete from Cars where id ='"+txtUpdateIdCar+"' ;";
-            InsertUpdateCar(query);
+            InsertUpdateDeleteCar(query);
             DisplayCar();
         }
         #endregion //Buttons
@@ -84,11 +92,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private void DisplayCar()
         {
             string query = "Select * FROM Cars";
-            InsertUpdateCar(query);
+            InsertUpdateDeleteCar(query);
 
         }//DisplayCar
 
-        private void InsertUpdateCar(string Query)
+        private void InsertUpdateDeleteCar(string Query)
         {
             SQLiteConnection connection = new SQLiteConnection(ConnectionString);
             connection.Open();

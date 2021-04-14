@@ -121,6 +121,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\Drivers.db" />
     <None Include="bin\Debug\libraryManagement.db" />
     <None Include="bin\Debug\Cars.db" />
     <None Include="packages.config" />

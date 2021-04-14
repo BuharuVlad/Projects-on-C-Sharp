@@ -36,7 +36,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             {
                 connection.Open();
 
-                //1. Add the new participant to the database
                 var command = new SQLiteCommand(queryString, connection);
                 var nameCar = new SQLiteParameter("@NameCar");
                 nameCar.Value = car.NameCar;
@@ -66,6 +65,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         {
             MessageBox.Show("Are you sure? Data will be delete!", "Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             this.Close();
-        }//CancelCar_Click  
+        }//CancelCar_Click
+
     }//AddCars
+
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

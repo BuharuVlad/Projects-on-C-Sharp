@@ -17,12 +17,10 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         {
             InitializeComponent();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close(); //close the login window
         }
-
         private void txtUsername_MouseClick(object sender, MouseEventArgs e)
         {
             //when you click on the textBox Username
@@ -32,7 +30,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 txtUsername.Clear();
             }
         }
-
         private void txtPassword_MouseClick(object sender, MouseEventArgs e)
         {
             //when you click on the textBox Password
@@ -43,7 +40,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 txtPassword.PasswordChar = '*'; //when you write the text will be real in back and you will se only "*"
             }
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             const string ConnectionString = "data source = libraryManagement.db";
@@ -55,10 +51,15 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 //"SELECT * from loginTable where username  = '" + txtUsername.Text + "' and pass = '" + txtPassword.Text + "'";
                 SQLiteDataAdapter yes = new SQLiteDataAdapter(commnad);
                 DataSet ds = new DataSet();
-                yes.Fill(ds);
+                yes.Fill(ds);                
 
-                if(ds.Tables[0].Rows.Count != 0)
+                if (ds.Tables[0].Rows.Count != 0)
                 {
+                    if (ValidateChildren(ValidationConstraints.Enabled))
+                    {
+                        MessageBox.Show(txtUsername.Text, "Message",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     this.Hide();
                     Dashbord dsa = new Dashbord();
                     dsa.Show();
@@ -70,20 +71,16 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
             }
         }
-
-        private void loginFrom_Load(object sender, EventArgs e)
+        private void txtUsername_Validating(object sender, CancelEventArgs e)
         {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
+            
+            if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                e.Cancel = true;
+                //txtUsername.Focus();
+                ErrorProvider errorProvider = new ErrorProvider();
+                errorProvider.SetError(txtUsername, "Please enter your Username!");
+            }
         }
     }
 }
