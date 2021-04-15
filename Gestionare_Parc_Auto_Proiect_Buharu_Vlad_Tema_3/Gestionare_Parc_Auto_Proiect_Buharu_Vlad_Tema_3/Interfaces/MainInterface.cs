@@ -19,19 +19,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             InitializeComponent();
         }
 
-        #region  Buttons   
-        private void addRuteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddRute addRute = new AddRute();
-            addRute.Show();
-        }
-
-        private void addTransportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTransport addTransport = new AddTransport();
-            addTransport.Show();
-        }
-
+        #region  Buttons 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -49,13 +37,19 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             InterfaceCar interfaceCar = new InterfaceCar();
             interfaceCar.Show();
         } //Car Interface
-
-        #endregion
-
         private void viewRutesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfaceRute interfaceRute = new InterfaceRute();
             interfaceRute.Show();
-        }
+        } //Rute Interface
+
+        private void viewTransportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfaceTransport interfaceTransport = new InterfaceTransport();
+            interfaceTransport.Show();
+        } //Transport Interface
+
+        #endregion
+
     }//Dashbord
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

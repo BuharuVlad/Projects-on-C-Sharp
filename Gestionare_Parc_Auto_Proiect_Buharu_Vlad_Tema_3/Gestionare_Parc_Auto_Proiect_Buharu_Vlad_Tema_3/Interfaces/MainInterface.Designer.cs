@@ -47,7 +47,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.ruteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewRutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTransportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTransportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,7 +172,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // viewDriversToolStripMenuItem
             // 
             this.viewDriversToolStripMenuItem.Name = "viewDriversToolStripMenuItem";
-            this.viewDriversToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewDriversToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.viewDriversToolStripMenuItem.Text = "View Drivers";
             this.viewDriversToolStripMenuItem.Click += new System.EventHandler(this.viewDriversToolStripMenuItem_Click);
             // 
@@ -188,31 +187,24 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // viewRutesToolStripMenuItem
             // 
             this.viewRutesToolStripMenuItem.Name = "viewRutesToolStripMenuItem";
-            this.viewRutesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewRutesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.viewRutesToolStripMenuItem.Text = "View Rutes";
             this.viewRutesToolStripMenuItem.Click += new System.EventHandler(this.viewRutesToolStripMenuItem_Click);
             // 
             // transportsToolStripMenuItem
             // 
             this.transportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addTransportToolStripMenuItem,
             this.viewTransportsToolStripMenuItem});
             this.transportsToolStripMenuItem.Name = "transportsToolStripMenuItem";
             this.transportsToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.transportsToolStripMenuItem.Text = "Transports";
             // 
-            // addTransportToolStripMenuItem
-            // 
-            this.addTransportToolStripMenuItem.Name = "addTransportToolStripMenuItem";
-            this.addTransportToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.addTransportToolStripMenuItem.Text = "Add Transport";
-            this.addTransportToolStripMenuItem.Click += new System.EventHandler(this.addTransportToolStripMenuItem_Click);
-            // 
             // viewTransportsToolStripMenuItem
             // 
             this.viewTransportsToolStripMenuItem.Name = "viewTransportsToolStripMenuItem";
-            this.viewTransportsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.viewTransportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewTransportsToolStripMenuItem.Text = "View Transports";
+            this.viewTransportsToolStripMenuItem.Click += new System.EventHandler(this.viewTransportsToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
@@ -264,7 +256,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem ruteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewRutesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addTransportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTransportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

@@ -88,21 +88,18 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             // 
             // txtNameRute
             // 
-            this.txtNameRute.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNameRute.Name = "txtNameRute";
-            this.txtNameRute.Size = new System.Drawing.Size(100, 25);
+            this.txtNameRute.Size = new System.Drawing.Size(150, 25);
             // 
             // txtFromRute
             // 
-            this.txtFromRute.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFromRute.Name = "txtFromRute";
-            this.txtFromRute.Size = new System.Drawing.Size(100, 25);
+            this.txtFromRute.Size = new System.Drawing.Size(120, 25);
             // 
             // txtToRute
             // 
-            this.txtToRute.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtToRute.Name = "txtToRute";
-            this.txtToRute.Size = new System.Drawing.Size(100, 25);
+            this.txtToRute.Size = new System.Drawing.Size(120, 25);
             // 
             // btnUpdateRute
             // 

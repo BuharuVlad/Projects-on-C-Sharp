@@ -50,6 +50,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.btnCancelRute.TabIndex = 16;
             this.btnCancelRute.Text = "Cancel";
             this.btnCancelRute.UseVisualStyleBackColor = true;
+            this.btnCancelRute.Click += new System.EventHandler(this.btnCancelRute_Click);
             // 
             // btnSaveRute
             // 

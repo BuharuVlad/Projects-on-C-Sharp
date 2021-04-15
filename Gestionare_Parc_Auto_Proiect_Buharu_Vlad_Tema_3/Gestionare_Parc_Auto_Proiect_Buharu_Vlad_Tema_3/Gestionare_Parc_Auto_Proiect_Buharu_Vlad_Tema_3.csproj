@@ -94,6 +94,12 @@
     <Compile Include="Interfaces\InterfaceRute.Designer.cs">
       <DependentUpon>InterfaceRute.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\InterfaceTransport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\InterfaceTransport.Designer.cs">
+      <DependentUpon>InterfaceTransport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\MainInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\InterfaceRute.resx">
       <DependentUpon>InterfaceRute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\InterfaceTransport.resx">
+      <DependentUpon>InterfaceTransport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>
