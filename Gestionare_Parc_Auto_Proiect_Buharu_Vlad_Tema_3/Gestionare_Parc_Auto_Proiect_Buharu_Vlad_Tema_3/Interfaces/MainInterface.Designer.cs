@@ -43,7 +43,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDriverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewDriversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,30 +159,22 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // viewCarsToolStripMenuItem
             // 
             this.viewCarsToolStripMenuItem.Name = "viewCarsToolStripMenuItem";
-            this.viewCarsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewCarsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.viewCarsToolStripMenuItem.Text = "View Cars";
             this.viewCarsToolStripMenuItem.Click += new System.EventHandler(this.viewCarsToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 
             this.driversToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addDriverToolStripMenuItem,
             this.viewDriversToolStripMenuItem});
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
             this.driversToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.driversToolStripMenuItem.Text = "Drivers";
             // 
-            // addDriverToolStripMenuItem
-            // 
-            this.addDriverToolStripMenuItem.Name = "addDriverToolStripMenuItem";
-            this.addDriverToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.addDriverToolStripMenuItem.Text = "Add Driver";
-            this.addDriverToolStripMenuItem.Click += new System.EventHandler(this.addDriverToolStripMenuItem_Click);
-            // 
             // viewDriversToolStripMenuItem
             // 
             this.viewDriversToolStripMenuItem.Name = "viewDriversToolStripMenuItem";
-            this.viewDriversToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.viewDriversToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewDriversToolStripMenuItem.Text = "View Drivers";
             this.viewDriversToolStripMenuItem.Click += new System.EventHandler(this.viewDriversToolStripMenuItem_Click);
             // 
@@ -277,7 +268,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewCarsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addDriverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewDriversToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ruteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRuteToolStripMenuItem;

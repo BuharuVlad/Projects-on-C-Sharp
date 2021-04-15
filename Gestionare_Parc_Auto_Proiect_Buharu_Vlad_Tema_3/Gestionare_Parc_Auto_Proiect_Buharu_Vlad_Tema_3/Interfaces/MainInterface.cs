@@ -14,21 +14,12 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 {
     public partial class Dashbord : Form
     {
-        
-        private const string ConnectionCar = "Data Source=Cars.db";
-        private const string ConnectionDriver = "Data Source=Drivers.db";
         public Dashbord()
         {
             InitializeComponent();
         }
-        #region  Buttons       
 
-        private void addDriverToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddDrivers addDrivers = new AddDrivers();
-            addDrivers.Show();
-        }
-
+        #region  Buttons   
         private void addRuteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddRute addRute = new AddRute();
@@ -45,44 +36,21 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         {
             this.Close();
         }
+        #endregion //Buttons
 
-        
-        #region Driver
-
+        #region View Buttons
         private void viewDriversToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayDriver();
-        }
-        #endregion //Driver
-        #endregion //Buttons
-        #region Driver
-        private void DisplayDriver()
-        {
-            string query = "Select * FROM Drivers";
-            InsertUpdateDeleteDriver(query);
-        }
-        private void InsertUpdateDeleteDriver(string Query)
-        {
-            SQLiteConnection connection = new SQLiteConnection(ConnectionDriver);
-            connection.Open();
-            SQLiteCommand cmd = new SQLiteCommand();
-            cmd.Connection = connection;
-            cmd.CommandText = Query;
-            using (SQLiteDataReader sdr = cmd.ExecuteReader())
-            {
-                DataTable dt = new DataTable();
-                dt.Load(sdr);
-                sdr.Close();
-                connection.Close();
-                dtGridList.DataSource = dt;
-            }
-        }
-
-        #endregion //Driver
+            InterfaceDriver interfaceDriver = new InterfaceDriver();
+            interfaceDriver.Show();
+        } //Driver Interface
         private void viewCarsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfaceCar dsa = new InterfaceCar();
-            dsa.Show();
-        }
+            InterfaceCar interfaceCar = new InterfaceCar();
+            interfaceCar.Show();
+        } //Car Interface
+        
+        #endregion
+
     }//Dashbord
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

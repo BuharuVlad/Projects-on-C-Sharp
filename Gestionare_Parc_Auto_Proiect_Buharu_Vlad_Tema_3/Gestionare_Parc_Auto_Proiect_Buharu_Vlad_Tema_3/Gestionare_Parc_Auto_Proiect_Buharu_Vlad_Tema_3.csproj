@@ -82,6 +82,18 @@
     <Compile Include="Interfaces\InterfaceCar.Designer.cs">
       <DependentUpon>InterfaceCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\InterfaceDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\InterfaceDriver.Designer.cs">
+      <DependentUpon>InterfaceDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\InterfaceRute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\InterfaceRute.Designer.cs">
+      <DependentUpon>InterfaceRute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\MainInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\InterfaceCar.resx">
       <DependentUpon>InterfaceCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\InterfaceDriver.resx">
+      <DependentUpon>InterfaceDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\InterfaceRute.resx">
+      <DependentUpon>InterfaceRute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>

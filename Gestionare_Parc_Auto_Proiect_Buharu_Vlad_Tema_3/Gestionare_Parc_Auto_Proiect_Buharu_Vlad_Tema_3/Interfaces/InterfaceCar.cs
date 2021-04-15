@@ -42,7 +42,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
                 connection.Close();
                 dtGridList.DataSource = dt;
             }
-        }
+        } // InsertUpdateDeleteCar
         private void dtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -55,30 +55,34 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             {
                 MessageBox.Show("Click only in the left side of the window, next to id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
+        } // dtGridList_CellClick
+
+        #region Buttons Car
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             DisplayCar();
-        }
+        } // btnRefresh_Click
 
         private void btnUpdateCar_Click(object sender, EventArgs e)
         {
             string query = "update Cars set NameCar = '" + txtUpdateNameCar + "', ModelCar = '" + txtUpdateModelCar + "' where id = '" + txtUpdateIdCar + "' ;";
             InsertUpdateDeleteCar(query);
             DisplayCar();
-        }
+        } // btnUpdateCar_Click
 
         private void btnDeleteCar_Click(object sender, EventArgs e)
         {
             string query = "delete from Cars where id ='" + txtUpdateIdCar + "' ;";
             InsertUpdateDeleteCar(query);
             DisplayCar();
-        }
+        } // btnDeleteCar_Click
 
         private void btnAddCar_Click(object sender, EventArgs e)
         {
             AddCars addCars = new AddCars();
             addCars.Show();
-        }
+        } // btnAddCar_Click
+
+        #endregion // View Buttons
     }
 }
