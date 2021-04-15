@@ -49,8 +49,13 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             InterfaceCar interfaceCar = new InterfaceCar();
             interfaceCar.Show();
         } //Car Interface
-        
+
         #endregion
 
+        private void viewRutesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfaceRute interfaceRute = new InterfaceRute();
+            interfaceRute.Show();
+        }
     }//Dashbord
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

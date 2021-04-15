@@ -560,7 +560,7 @@
         AAAAAAAAAAAAAADAoRoRRevIsC0uKgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnUpdateDriver.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUpdateRute.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAAA+s9J6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABE3SURBVHhe7Z2tjxxHE8YPGxkdOmDJsiwFOCDA/hMu6IiZ
@@ -640,7 +640,7 @@
         7lcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDeleteDriver.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDeleteRute.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAASwCAYAAADrIbPPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP+lSURBVHhe7NxZtKZ7Ytd1L9QbL1xLLkwfz+k6nTqc09Sx
@@ -3441,7 +3441,7 @@
         nHPOOeecc84555xzzjnnnHPOOede8f7KX/n/AfQ+hGI4GDOqAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnAddCar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddRute.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAADpCAYAAABGBvnlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA7fSURBVHhe7Z0/jBxXHcevJbEsCLEspwnBFhIk4YRCQQTI

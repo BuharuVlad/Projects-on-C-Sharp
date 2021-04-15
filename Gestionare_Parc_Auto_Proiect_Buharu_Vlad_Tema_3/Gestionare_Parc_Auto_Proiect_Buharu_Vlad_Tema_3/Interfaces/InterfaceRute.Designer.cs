@@ -32,14 +32,14 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfaceRute));
             this.dtGridList = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.txtIdDriver = new System.Windows.Forms.ToolStripTextBox();
-            this.txtFirstNameDriver = new System.Windows.Forms.ToolStripTextBox();
-            this.txtSecondNameDriver = new System.Windows.Forms.ToolStripTextBox();
-            this.txtBirthDayDriver = new System.Windows.Forms.ToolStripTextBox();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.btnUpdateDriver = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteDriver = new System.Windows.Forms.ToolStripButton();
-            this.btnAddCar = new System.Windows.Forms.ToolStripButton();
+            this.txtIdRute = new System.Windows.Forms.ToolStripTextBox();
+            this.txtNameRute = new System.Windows.Forms.ToolStripTextBox();
+            this.txtFromRute = new System.Windows.Forms.ToolStripTextBox();
+            this.txtToRute = new System.Windows.Forms.ToolStripTextBox();
+            this.btnUpdateRute = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteRute = new System.Windows.Forms.ToolStripButton();
+            this.btnAddRute = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,47 +51,24 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.dtGridList.Name = "dtGridList";
             this.dtGridList.Size = new System.Drawing.Size(776, 410);
             this.dtGridList.TabIndex = 8;
+            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridList_CellClick);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnRefresh,
-            this.txtIdDriver,
-            this.txtFirstNameDriver,
-            this.txtSecondNameDriver,
-            this.txtBirthDayDriver,
-            this.btnUpdateDriver,
-            this.btnDeleteDriver,
-            this.btnAddCar});
+            this.txtIdRute,
+            this.txtNameRute,
+            this.txtFromRute,
+            this.txtToRute,
+            this.btnUpdateRute,
+            this.btnDeleteRute,
+            this.btnAddRute});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "AddCar";
-            // 
-            // txtIdDriver
-            // 
-            this.txtIdDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtIdDriver.Name = "txtIdDriver";
-            this.txtIdDriver.Size = new System.Drawing.Size(25, 25);
-            // 
-            // txtFirstNameDriver
-            // 
-            this.txtFirstNameDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFirstNameDriver.Name = "txtFirstNameDriver";
-            this.txtFirstNameDriver.Size = new System.Drawing.Size(100, 25);
-            // 
-            // txtSecondNameDriver
-            // 
-            this.txtSecondNameDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSecondNameDriver.Name = "txtSecondNameDriver";
-            this.txtSecondNameDriver.Size = new System.Drawing.Size(100, 25);
-            // 
-            // txtBirthDayDriver
-            // 
-            this.txtBirthDayDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBirthDayDriver.Name = "txtBirthDayDriver";
-            this.txtBirthDayDriver.Size = new System.Drawing.Size(100, 25);
             // 
             // btnRefresh
             // 
@@ -101,33 +78,61 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(23, 22);
             this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnUpdateDriver
+            // txtIdRute
             // 
-            this.btnUpdateDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnUpdateDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateDriver.Image")));
-            this.btnUpdateDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUpdateDriver.Name = "btnUpdateDriver";
-            this.btnUpdateDriver.Size = new System.Drawing.Size(23, 22);
-            this.btnUpdateDriver.Text = "UpdateDriver";
+            this.txtIdRute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIdRute.Name = "txtIdRute";
+            this.txtIdRute.Size = new System.Drawing.Size(25, 25);
             // 
-            // btnDeleteDriver
+            // txtNameRute
             // 
-            this.btnDeleteDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDeleteDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDriver.Image")));
-            this.btnDeleteDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeleteDriver.Name = "btnDeleteDriver";
-            this.btnDeleteDriver.Size = new System.Drawing.Size(23, 22);
-            this.btnDeleteDriver.Text = "Delete Driver";
+            this.txtNameRute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNameRute.Name = "txtNameRute";
+            this.txtNameRute.Size = new System.Drawing.Size(100, 25);
             // 
-            // btnAddCar
+            // txtFromRute
             // 
-            this.btnAddCar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddCar.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCar.Image")));
-            this.btnAddCar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddCar.Name = "btnAddCar";
-            this.btnAddCar.Size = new System.Drawing.Size(23, 22);
-            this.btnAddCar.Text = "AddCar";
+            this.txtFromRute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFromRute.Name = "txtFromRute";
+            this.txtFromRute.Size = new System.Drawing.Size(100, 25);
+            // 
+            // txtToRute
+            // 
+            this.txtToRute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtToRute.Name = "txtToRute";
+            this.txtToRute.Size = new System.Drawing.Size(100, 25);
+            // 
+            // btnUpdateRute
+            // 
+            this.btnUpdateRute.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUpdateRute.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateRute.Image")));
+            this.btnUpdateRute.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUpdateRute.Name = "btnUpdateRute";
+            this.btnUpdateRute.Size = new System.Drawing.Size(23, 22);
+            this.btnUpdateRute.Text = "UpdateRute";
+            this.btnUpdateRute.Click += new System.EventHandler(this.btnUpdateRute_Click);
+            // 
+            // btnDeleteRute
+            // 
+            this.btnDeleteRute.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteRute.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRute.Image")));
+            this.btnDeleteRute.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteRute.Name = "btnDeleteRute";
+            this.btnDeleteRute.Size = new System.Drawing.Size(23, 22);
+            this.btnDeleteRute.Text = "DeleteRute";
+            this.btnDeleteRute.Click += new System.EventHandler(this.btnDeleteRute_Click);
+            // 
+            // btnAddRute
+            // 
+            this.btnAddRute.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddRute.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRute.Image")));
+            this.btnAddRute.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddRute.Name = "btnAddRute";
+            this.btnAddRute.Size = new System.Drawing.Size(23, 22);
+            this.btnAddRute.Text = "AddRute";
+            this.btnAddRute.Click += new System.EventHandler(this.btnAddRute_Click);
             // 
             // InterfaceRute
             // 
@@ -151,12 +156,12 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         private System.Windows.Forms.DataGridView dtGridList;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnRefresh;
-        private System.Windows.Forms.ToolStripTextBox txtIdDriver;
-        private System.Windows.Forms.ToolStripTextBox txtFirstNameDriver;
-        private System.Windows.Forms.ToolStripTextBox txtSecondNameDriver;
-        private System.Windows.Forms.ToolStripTextBox txtBirthDayDriver;
-        private System.Windows.Forms.ToolStripButton btnUpdateDriver;
-        private System.Windows.Forms.ToolStripButton btnDeleteDriver;
-        private System.Windows.Forms.ToolStripButton btnAddCar;
+        private System.Windows.Forms.ToolStripTextBox txtIdRute;
+        private System.Windows.Forms.ToolStripTextBox txtNameRute;
+        private System.Windows.Forms.ToolStripTextBox txtFromRute;
+        private System.Windows.Forms.ToolStripTextBox txtToRute;
+        private System.Windows.Forms.ToolStripButton btnUpdateRute;
+        private System.Windows.Forms.ToolStripButton btnDeleteRute;
+        private System.Windows.Forms.ToolStripButton btnAddRute;
     }
 }

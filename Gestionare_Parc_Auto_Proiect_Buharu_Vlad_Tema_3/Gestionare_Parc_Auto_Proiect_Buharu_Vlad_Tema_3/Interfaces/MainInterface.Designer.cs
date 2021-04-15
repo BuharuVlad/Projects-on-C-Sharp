@@ -45,7 +45,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewDriversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewRutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTransportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,24 +180,17 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // ruteToolStripMenuItem
             // 
             this.ruteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addRuteToolStripMenuItem,
             this.viewRutesToolStripMenuItem});
             this.ruteToolStripMenuItem.Name = "ruteToolStripMenuItem";
             this.ruteToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ruteToolStripMenuItem.Text = "Rutes";
             // 
-            // addRuteToolStripMenuItem
-            // 
-            this.addRuteToolStripMenuItem.Name = "addRuteToolStripMenuItem";
-            this.addRuteToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.addRuteToolStripMenuItem.Text = "Add Rute";
-            this.addRuteToolStripMenuItem.Click += new System.EventHandler(this.addRuteToolStripMenuItem_Click);
-            // 
             // viewRutesToolStripMenuItem
             // 
             this.viewRutesToolStripMenuItem.Name = "viewRutesToolStripMenuItem";
-            this.viewRutesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.viewRutesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewRutesToolStripMenuItem.Text = "View Rutes";
+            this.viewRutesToolStripMenuItem.Click += new System.EventHandler(this.viewRutesToolStripMenuItem_Click);
             // 
             // transportsToolStripMenuItem
             // 
@@ -270,7 +262,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewDriversToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ruteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addRuteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewRutesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTransportToolStripMenuItem;
