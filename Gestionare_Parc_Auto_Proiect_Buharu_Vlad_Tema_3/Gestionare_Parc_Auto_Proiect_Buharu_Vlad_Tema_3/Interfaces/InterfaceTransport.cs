@@ -19,13 +19,13 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             InitializeComponent();
         }
 
-        private void btnAddTransport_Click(object sender, EventArgs e)
+        private void BtnAddTransport_Click(object sender, EventArgs e)
         {
             AddTransport addTransport = new AddTransport();
             addTransport.Show();
         }
 
-        private void btnDeleteTransport_Click(object sender, EventArgs e)
+        private void BtnDeleteTransport_Click(object sender, EventArgs e)
         {
             string query = "delete from Transport where id ='" + txtIdTransport + "' ;";
             InsertUpdateDeleteTransport(query);
@@ -33,19 +33,20 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
 
         }
 
-        private void btnUpdateTransport_Click(object sender, EventArgs e)
+        private void BtnUpdateTransport_Click(object sender, EventArgs e)
         {
-            string query = "update Transport set ProductTransport = '" + txtProductTransport + "', QuantityTransport = '" + txtQuantityTransport + "' where id = '" + txtIdTransport + "' ;";
+            string query = "update Transport set ProductTransport = '" + txtProductTransport + "', " +
+                "QuantityTransport = '" + txtQuantityTransport + "' where id = '" + txtIdTransport + "' ;";
             InsertUpdateDeleteTransport(query);
             DisplayTransport();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void BtnRefresh_Click(object sender, EventArgs e)
         {
             DisplayTransport();
         }
 
-        private void dtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -69,9 +70,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         {
             SQLiteConnection connection = new SQLiteConnection(ConnectionTransport);
             connection.Open();
-            SQLiteCommand cmd = new SQLiteCommand();
-            cmd.Connection = connection;
-            cmd.CommandText = Query;
+            SQLiteCommand cmd = new SQLiteCommand
+            {
+                Connection = connection,
+                CommandText = Query
+            };
             using (SQLiteDataReader sdr = cmd.ExecuteReader())
             {
                 DataTable dt = new DataTable();

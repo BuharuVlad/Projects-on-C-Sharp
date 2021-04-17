@@ -56,7 +56,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 command.Parameters.Add(FromRute);
                 command.Parameters.Add(ToRute);
 
-                rute.id = (long)command.ExecuteScalar();
+                rute.Id = (long)command.ExecuteScalar();
 
                 var countStart = listRute.Count;
                 listRute.Add(rute);

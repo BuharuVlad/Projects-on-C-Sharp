@@ -35,13 +35,14 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.txtIdDriver = new System.Windows.Forms.ToolStripTextBox();
             this.txtFirstNameDriver = new System.Windows.Forms.ToolStripTextBox();
             this.txtSecondNameDriver = new System.Windows.Forms.ToolStripTextBox();
+            this.txtBirthDayDriver = new System.Windows.Forms.ToolStripTextBox();
+            this.txtSalaryDriver = new System.Windows.Forms.ToolStripTextBox();
+            this.txtAdressDriver = new System.Windows.Forms.ToolStripTextBox();
             this.btnUpdateDriver = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteDriver = new System.Windows.Forms.ToolStripButton();
             this.btnAddCar = new System.Windows.Forms.ToolStripButton();
             this.dtGridList = new System.Windows.Forms.DataGridView();
-            this.txtBirthDayDriver = new System.Windows.Forms.ToolStripTextBox();
-            this.txtSalaryDriver = new System.Windows.Forms.ToolStripTextBox();
-            this.txtAdressDriver = new System.Windows.Forms.ToolStripTextBox();
+            this.btnSerializareTxtDriver = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.txtAdressDriver,
             this.btnUpdateDriver,
             this.btnDeleteDriver,
-            this.btnAddCar});
+            this.btnAddCar,
+            this.btnSerializareTxtDriver});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -73,7 +75,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(23, 22);
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // txtIdDriver
             // 
@@ -93,45 +95,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.txtSecondNameDriver.Name = "txtSecondNameDriver";
             this.txtSecondNameDriver.Size = new System.Drawing.Size(100, 25);
             // 
-            // btnUpdateDriver
-            // 
-            this.btnUpdateDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnUpdateDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateDriver.Image")));
-            this.btnUpdateDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUpdateDriver.Name = "btnUpdateDriver";
-            this.btnUpdateDriver.Size = new System.Drawing.Size(23, 22);
-            this.btnUpdateDriver.Text = "UpdateDriver";
-            this.btnUpdateDriver.Click += new System.EventHandler(this.btnUpdateDriver_Click);
-            // 
-            // btnDeleteDriver
-            // 
-            this.btnDeleteDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDeleteDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDriver.Image")));
-            this.btnDeleteDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeleteDriver.Name = "btnDeleteDriver";
-            this.btnDeleteDriver.Size = new System.Drawing.Size(23, 22);
-            this.btnDeleteDriver.Text = "Delete Driver";
-            this.btnDeleteDriver.Click += new System.EventHandler(this.btnDeleteDriver_Click);
-            // 
-            // btnAddCar
-            // 
-            this.btnAddCar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddCar.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCar.Image")));
-            this.btnAddCar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddCar.Name = "btnAddCar";
-            this.btnAddCar.Size = new System.Drawing.Size(23, 22);
-            this.btnAddCar.Text = "AddCar";
-            this.btnAddCar.Click += new System.EventHandler(this.btnAddCar_Click);
-            // 
-            // dtGridList
-            // 
-            this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridList.Location = new System.Drawing.Point(12, 28);
-            this.dtGridList.Name = "dtGridList";
-            this.dtGridList.Size = new System.Drawing.Size(776, 322);
-            this.dtGridList.TabIndex = 6;
-            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridList_CellClick);
-            // 
             // txtBirthDayDriver
             // 
             this.txtBirthDayDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -149,6 +112,55 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.txtAdressDriver.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAdressDriver.Name = "txtAdressDriver";
             this.txtAdressDriver.Size = new System.Drawing.Size(150, 25);
+            // 
+            // btnUpdateDriver
+            // 
+            this.btnUpdateDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUpdateDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateDriver.Image")));
+            this.btnUpdateDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUpdateDriver.Name = "btnUpdateDriver";
+            this.btnUpdateDriver.Size = new System.Drawing.Size(23, 22);
+            this.btnUpdateDriver.Text = "UpdateDriver";
+            this.btnUpdateDriver.Click += new System.EventHandler(this.BtnUpdateDriver_Click);
+            // 
+            // btnDeleteDriver
+            // 
+            this.btnDeleteDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeleteDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDriver.Image")));
+            this.btnDeleteDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteDriver.Name = "btnDeleteDriver";
+            this.btnDeleteDriver.Size = new System.Drawing.Size(23, 22);
+            this.btnDeleteDriver.Text = "Delete Driver";
+            this.btnDeleteDriver.Click += new System.EventHandler(this.BtnDeleteDriver_Click);
+            // 
+            // btnAddCar
+            // 
+            this.btnAddCar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddCar.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCar.Image")));
+            this.btnAddCar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddCar.Name = "btnAddCar";
+            this.btnAddCar.Size = new System.Drawing.Size(23, 22);
+            this.btnAddCar.Text = "AddCar";
+            this.btnAddCar.Click += new System.EventHandler(this.BtnAddCar_Click);
+            // 
+            // dtGridList
+            // 
+            this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridList.Location = new System.Drawing.Point(12, 28);
+            this.dtGridList.Name = "dtGridList";
+            this.dtGridList.Size = new System.Drawing.Size(776, 322);
+            this.dtGridList.TabIndex = 6;
+            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
+            // 
+            // btnSerializareTxtDriver
+            // 
+            this.btnSerializareTxtDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSerializareTxtDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnSerializareTxtDriver.Image")));
+            this.btnSerializareTxtDriver.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSerializareTxtDriver.Name = "btnSerializareTxtDriver";
+            this.btnSerializareTxtDriver.Size = new System.Drawing.Size(23, 22);
+            this.btnSerializareTxtDriver.Text = "Serializare Txt Driver";
+            this.btnSerializareTxtDriver.Click += new System.EventHandler(this.BtnSerializareTxtDriver_Click);
             // 
             // InterfaceDriver
             // 
@@ -181,5 +193,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         private System.Windows.Forms.ToolStripTextBox txtBirthDayDriver;
         private System.Windows.Forms.ToolStripTextBox txtSalaryDriver;
         private System.Windows.Forms.ToolStripTextBox txtAdressDriver;
+        private System.Windows.Forms.ToolStripButton btnSerializareTxtDriver;
     }
 }

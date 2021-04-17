@@ -13,14 +13,14 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 {
     public partial class AddTransport : Form
     {
-        private List<Transport> listTransport = new List<Transport>();
+        private readonly List<Transport> listTransport = new List<Transport>();
         private const string ConnectiongString = "Data Source = Transport.db";
         public AddTransport()
         {
             InitializeComponent();
         }
 
-        private void btnSaveTransport_Click(object sender, EventArgs e)
+        private void BtnSaveTransport_Click(object sender, EventArgs e)
         {
             if (txtProductTransport.Text != "" && txtQuantityTransport.Text != ""
                 && txtProductTransport.Text != " " && txtQuantityTransport.Text != " ")
@@ -34,7 +34,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             }
         }
 
-        private void btnCancelTransport_Click(object sender, EventArgs e)
+        private void BtnCancelTransport_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Are you sure? Data will be delete!", "Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             this.Close();
@@ -48,15 +48,19 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             {
                 connection.Open();
                 var command = new SQLiteCommand(query, connection);
-                var ProductTransport = new SQLiteParameter("@ProductTransport");
-                ProductTransport.Value = transport.ProductTransport;
-                var QuantityTransport = new SQLiteParameter("@QuantityTransport");
-                QuantityTransport.Value = transport.QuantityTransport;
+                var ProductTransport = new SQLiteParameter("@ProductTransport")
+                {
+                    Value = transport.ProductTransport
+                };
+                var QuantityTransport = new SQLiteParameter("@QuantityTransport")
+                {
+                    Value = transport.QuantityTransport
+                };
 
                 command.Parameters.Add(ProductTransport);
                 command.Parameters.Add(QuantityTransport);
 
-                transport.id = (long)command.ExecuteScalar();
+                transport.Id = (long)command.ExecuteScalar();
 
                 var countStart = listTransport.Count;
                 listTransport.Add(transport);

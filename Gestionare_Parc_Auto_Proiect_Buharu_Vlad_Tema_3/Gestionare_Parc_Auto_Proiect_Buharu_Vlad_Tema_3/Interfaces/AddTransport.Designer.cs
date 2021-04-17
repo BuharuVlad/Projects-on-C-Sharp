@@ -59,7 +59,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.btnCancelTransport.TabIndex = 25;
             this.btnCancelTransport.Text = "Cancel";
             this.btnCancelTransport.UseVisualStyleBackColor = true;
-            this.btnCancelTransport.Click += new System.EventHandler(this.btnCancelTransport_Click);
+            this.btnCancelTransport.Click += new System.EventHandler(this.BtnCancelTransport_Click);
             // 
             // btnSaveTransport
             // 
@@ -71,7 +71,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.btnSaveTransport.TabIndex = 24;
             this.btnSaveTransport.Text = "Save";
             this.btnSaveTransport.UseVisualStyleBackColor = true;
-            this.btnSaveTransport.Click += new System.EventHandler(this.btnSaveTransport_Click);
+            this.btnSaveTransport.Click += new System.EventHandler(this.BtnSaveTransport_Click);
             // 
             // label2
             // 

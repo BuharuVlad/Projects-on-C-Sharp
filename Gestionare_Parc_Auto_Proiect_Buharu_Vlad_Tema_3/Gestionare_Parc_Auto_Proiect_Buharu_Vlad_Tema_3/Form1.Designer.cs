@@ -51,8 +51,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtUsername.Size = new System.Drawing.Size(170, 15);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
-            this.txtUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUsername_MouseClick);
-            this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsername_Validating);
+            this.txtUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtUsername_MouseClick);
+            this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.TxtUsername_Validating);
             // 
             // txtPassword
             // 
@@ -65,7 +65,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtPassword.Size = new System.Drawing.Size(170, 15);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Password";
-            this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
+            this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtPassword_MouseClick);
             // 
             // btnLogin
             // 
@@ -78,7 +78,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // panel1
             // 
@@ -131,7 +131,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // loginFrom
             // 

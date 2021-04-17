@@ -38,6 +38,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnUpdateCar = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteCar = new System.Windows.Forms.ToolStripButton();
             this.btnAddCar = new System.Windows.Forms.ToolStripButton();
+            this.btnSerializareTxt = new System.Windows.Forms.ToolStripButton();
             this.dtGridList = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
@@ -52,7 +53,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.txtUpdateModelCar,
             this.btnUpdateCar,
             this.btnDeleteCar,
-            this.btnAddCar});
+            this.btnAddCar,
+            this.btnSerializareTxt});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -67,7 +69,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(23, 22);
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // txtUpdateIdCar
             // 
@@ -95,7 +97,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnUpdateCar.Name = "btnUpdateCar";
             this.btnUpdateCar.Size = new System.Drawing.Size(23, 22);
             this.btnUpdateCar.Text = "UpdateCar";
-            this.btnUpdateCar.Click += new System.EventHandler(this.btnUpdateCar_Click);
+            this.btnUpdateCar.Click += new System.EventHandler(this.BtnUpdateCar_Click);
             // 
             // btnDeleteCar
             // 
@@ -105,7 +107,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnDeleteCar.Name = "btnDeleteCar";
             this.btnDeleteCar.Size = new System.Drawing.Size(23, 22);
             this.btnDeleteCar.Text = "Delete";
-            this.btnDeleteCar.Click += new System.EventHandler(this.btnDeleteCar_Click);
+            this.btnDeleteCar.Click += new System.EventHandler(this.BtnDeleteCar_Click);
             // 
             // btnAddCar
             // 
@@ -115,7 +117,17 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnAddCar.Name = "btnAddCar";
             this.btnAddCar.Size = new System.Drawing.Size(23, 22);
             this.btnAddCar.Text = "AddCar";
-            this.btnAddCar.Click += new System.EventHandler(this.btnAddCar_Click);
+            this.btnAddCar.Click += new System.EventHandler(this.BtnAddCar_Click);
+            // 
+            // btnSerializareTxt
+            // 
+            this.btnSerializareTxt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSerializareTxt.Image = ((System.Drawing.Image)(resources.GetObject("btnSerializareTxt.Image")));
+            this.btnSerializareTxt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSerializareTxt.Name = "btnSerializareTxt";
+            this.btnSerializareTxt.Size = new System.Drawing.Size(23, 22);
+            this.btnSerializareTxt.Text = "Export in text file";
+            this.btnSerializareTxt.Click += new System.EventHandler(this.BtnSerializareTxt_Click);
             // 
             // dtGridList
             // 
@@ -124,7 +136,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.dtGridList.Name = "dtGridList";
             this.dtGridList.Size = new System.Drawing.Size(776, 281);
             this.dtGridList.TabIndex = 5;
-            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridList_CellClick);
+            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
             // 
             // InterfaceCar
             // 
@@ -154,5 +166,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         private System.Windows.Forms.ToolStripButton btnDeleteCar;
         private System.Windows.Forms.DataGridView dtGridList;
         private System.Windows.Forms.ToolStripButton btnAddCar;
+        private System.Windows.Forms.ToolStripButton btnSerializareTxt;
     }
 }

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 {
     public partial class AddCars : Form
     {
-        private List<Car> listCar = new List<Car>();
+        private readonly List<Car> listCar = new List<Car>();
         private const string ConnectionString = "Data Source=Cars.db";
         public AddCars()
         {
@@ -37,15 +38,19 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 connection.Open();
 
                 var command = new SQLiteCommand(queryString, connection);
-                var nameCar = new SQLiteParameter("@NameCar");
-                nameCar.Value = car.NameCar;
-                var modelCar = new SQLiteParameter("@ModelCar");
-                modelCar.Value = car.ModelCar;
+                var nameCar = new SQLiteParameter("@NameCar")
+                {
+                    Value = car.NameCar
+                };
+                var modelCar = new SQLiteParameter("@ModelCar")
+                {
+                    Value = car.ModelCar
+                };
 
                 command.Parameters.Add(nameCar);
                 command.Parameters.Add(modelCar);
 
-                car.id = (long)command.ExecuteScalar();
+                car.Id = (long)command.ExecuteScalar();
 
                 var countStart = listCar.Count;
                 listCar.Add(car);
@@ -65,8 +70,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         {
             MessageBox.Show("Are you sure? Data will be delete!", "Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             this.Close();
-        }//CancelCar_Click
-
+        }//CancelCar_Click        
     }//AddCars
 
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

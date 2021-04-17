@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
     public partial class InterfaceCar : Form
     {
         private const string ConnectionCar = "Data Source=Cars.db";
+        private static readonly List<string> carsTxt = new List<string>();
         public InterfaceCar()
         {
             InitializeComponent();
@@ -31,9 +33,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         {
             SQLiteConnection connection = new SQLiteConnection(ConnectionCar);
             connection.Open();
-            SQLiteCommand cmd = new SQLiteCommand();
-            cmd.Connection = connection;
-            cmd.CommandText = Query;
+            SQLiteCommand cmd = new SQLiteCommand
+            {
+                Connection = connection,
+                CommandText = Query
+            };
             using (SQLiteDataReader sdr = cmd.ExecuteReader())
             {
                 DataTable dt = new DataTable();
@@ -43,7 +47,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
                 dtGridList.DataSource = dt;
             }
         } // InsertUpdateDeleteCar
-        private void dtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -58,31 +62,74 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         } // dtGridList_CellClick
 
         #region Buttons Car
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void BtnRefresh_Click(object sender, EventArgs e)
         {
             DisplayCar();
         } // btnRefresh_Click
 
-        private void btnUpdateCar_Click(object sender, EventArgs e)
+        private void BtnUpdateCar_Click(object sender, EventArgs e)
         {
             string query = "update Cars set NameCar = '" + txtUpdateNameCar + "', ModelCar = '" + txtUpdateModelCar + "' where id = '" + txtUpdateIdCar + "' ;";
             InsertUpdateDeleteCar(query);
             DisplayCar();
         } // btnUpdateCar_Click
 
-        private void btnDeleteCar_Click(object sender, EventArgs e)
+        private void BtnDeleteCar_Click(object sender, EventArgs e)
         {
             string query = "delete from Cars where id ='" + txtUpdateIdCar + "' ;";
             InsertUpdateDeleteCar(query);
             DisplayCar();
         } // btnDeleteCar_Click
 
-        private void btnAddCar_Click(object sender, EventArgs e)
+        private void BtnAddCar_Click(object sender, EventArgs e)
         {
             AddCars addCars = new AddCars();
             addCars.Show();
         } // btnAddCar_Click
 
         #endregion // View Buttons
+
+        private void BtnSerializareTxt_Click(object sender, EventArgs e)
+        {
+            List<string> carsTxt = ConvertSQLiteInList();
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Text File | *.txt";
+                saveFileDialog.Title = "Save as text file";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                    {
+                        sw.WriteLine("NameCar,ModelCar");
+
+                        for (int i = 0; i < carsTxt.Count; i++)
+                        {
+                            sw.WriteLine(carsTxt[i]);
+                        }
+                    }
+                }
+            }
+        }// btnSerializareTxt_Click
+
+        public static List<string> ConvertSQLiteInList()
+        {
+            using (SQLiteConnection connect = new SQLiteConnection(ConnectionCar))
+            {
+                connect.Open();
+                using (SQLiteCommand command = connect.CreateCommand())
+                {
+                    command.CommandText = "SELECT DISTINCT NameCar, ModelCar FROM Cars";
+                    command.CommandType = CommandType.Text;
+                    SQLiteDataReader r = command.ExecuteReader();
+                    while (r.Read())
+                    {
+                        string NameModelCar = (string)r["NameCar"] + ", " + (string)r["ModelCar"];
+                        carsTxt.Add(NameModelCar);
+                    }
+                }
+            }
+            return carsTxt;
+        }
     }
 }

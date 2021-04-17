@@ -51,7 +51,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.dtGridList.Name = "dtGridList";
             this.dtGridList.Size = new System.Drawing.Size(776, 410);
             this.dtGridList.TabIndex = 8;
-            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridList_CellClick);
+            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
             // 
             // toolStrip1
             // 
@@ -78,7 +78,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(23, 22);
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // txtIdRute
             // 
@@ -109,7 +109,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnUpdateRute.Name = "btnUpdateRute";
             this.btnUpdateRute.Size = new System.Drawing.Size(23, 22);
             this.btnUpdateRute.Text = "UpdateRute";
-            this.btnUpdateRute.Click += new System.EventHandler(this.btnUpdateRute_Click);
+            this.btnUpdateRute.Click += new System.EventHandler(this.BtnUpdateRute_Click);
             // 
             // btnDeleteRute
             // 
@@ -119,7 +119,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnDeleteRute.Name = "btnDeleteRute";
             this.btnDeleteRute.Size = new System.Drawing.Size(23, 22);
             this.btnDeleteRute.Text = "DeleteRute";
-            this.btnDeleteRute.Click += new System.EventHandler(this.btnDeleteRute_Click);
+            this.btnDeleteRute.Click += new System.EventHandler(this.BtnDeleteRute_Click);
             // 
             // btnAddRute
             // 
@@ -129,7 +129,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnAddRute.Name = "btnAddRute";
             this.btnAddRute.Size = new System.Drawing.Size(23, 22);
             this.btnAddRute.Text = "AddRute";
-            this.btnAddRute.Click += new System.EventHandler(this.btnAddRute_Click);
+            this.btnAddRute.Click += new System.EventHandler(this.BtnAddRute_Click);
             // 
             // InterfaceRute
             // 

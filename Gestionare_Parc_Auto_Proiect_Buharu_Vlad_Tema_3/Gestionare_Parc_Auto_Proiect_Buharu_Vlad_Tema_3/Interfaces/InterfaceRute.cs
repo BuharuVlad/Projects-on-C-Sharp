@@ -18,11 +18,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         {
             InitializeComponent();
         }
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void BtnRefresh_Click(object sender, EventArgs e)
         {
             DisplayRute();
         }
-        private void btnAddRute_Click(object sender, EventArgs e)
+        private void BtnAddRute_Click(object sender, EventArgs e)
         {
             AddRute addRute = new AddRute();
             addRute.Show();
@@ -36,9 +36,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         {
             SQLiteConnection connection = new SQLiteConnection(ConnectionRute);
             connection.Open();
-            SQLiteCommand cmd = new SQLiteCommand();
-            cmd.Connection = connection;
-            cmd.CommandText = Query;
+            SQLiteCommand cmd = new SQLiteCommand
+            {
+                Connection = connection,
+                CommandText = Query
+            };
             using (SQLiteDataReader sdr = cmd.ExecuteReader())
             {
                 DataTable dt = new DataTable();
@@ -49,14 +51,14 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             }
         }
 
-        private void btnDeleteRute_Click(object sender, EventArgs e)
+        private void BtnDeleteRute_Click(object sender, EventArgs e)
         {
             string query = "delete from Rute where id ='" + txtIdRute + "' ;";
             InsertUpdateDeleteRute(query);
             DisplayRute();
         }
 
-        private void btnUpdateRute_Click(object sender, EventArgs e)
+        private void BtnUpdateRute_Click(object sender, EventArgs e)
         {
             string query = "update Rute set NameRute = '" + txtNameRute + "'," +
                " FromRute = '" + txtFromRute + "', " +
@@ -65,7 +67,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             DisplayRute();
         }
 
-        private void dtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DtGridList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {

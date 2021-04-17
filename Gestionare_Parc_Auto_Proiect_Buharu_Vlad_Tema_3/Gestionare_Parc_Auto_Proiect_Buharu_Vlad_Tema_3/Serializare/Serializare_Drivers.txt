@@ -1,0 +1,4 @@
+FirstName, SecondName, BirthDay,Salary,Adress
+Buharu Vlad,Thursday, August 5, 1993,3500,Aleea Giurgeni
+John Smith,02.02.2000,4000,Pallady
+Buharu Vlad,Wednesday, January 1, 2003,2500,Pallady

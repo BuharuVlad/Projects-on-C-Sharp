@@ -33,13 +33,13 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtExportDataCar = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tXTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtExportDataDrivers = new System.Windows.Forms.ToolStripMenuItem();
             this.rutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tXTToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtExportDataRutes = new System.Windows.Forms.ToolStripMenuItem();
             this.transportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tXTToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtExportDataTransports = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,64 +87,64 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.rutesToolStripMenuItem,
             this.transportsToolStripMenuItem1});
             this.exportDataToolStripMenuItem.Name = "exportDataToolStripMenuItem";
-            this.exportDataToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.exportDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportDataToolStripMenuItem.Text = "Export data";
             // 
             // carsToolStripMenuItem1
             // 
             this.carsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtToolStripMenuItem});
+            this.txtExportDataCar});
             this.carsToolStripMenuItem1.Name = "carsToolStripMenuItem1";
-            this.carsToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.carsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.carsToolStripMenuItem1.Text = "Cars";
             // 
-            // txtToolStripMenuItem
+            // txtExportDataCar
             // 
-            this.txtToolStripMenuItem.Name = "txtToolStripMenuItem";
-            this.txtToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.txtToolStripMenuItem.Text = "TXT";
+            this.txtExportDataCar.Name = "txtExportDataCar";
+            this.txtExportDataCar.Size = new System.Drawing.Size(180, 22);
+            this.txtExportDataCar.Text = "TXT";
             // 
             // driversToolStripMenuItem1
             // 
             this.driversToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tXTToolStripMenuItem1});
+            this.txtExportDataDrivers});
             this.driversToolStripMenuItem1.Name = "driversToolStripMenuItem1";
-            this.driversToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.driversToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.driversToolStripMenuItem1.Text = "Drivers";
             // 
-            // tXTToolStripMenuItem1
+            // txtExportDataDrivers
             // 
-            this.tXTToolStripMenuItem1.Name = "tXTToolStripMenuItem1";
-            this.tXTToolStripMenuItem1.Size = new System.Drawing.Size(93, 22);
-            this.tXTToolStripMenuItem1.Text = "TXT";
+            this.txtExportDataDrivers.Name = "txtExportDataDrivers";
+            this.txtExportDataDrivers.Size = new System.Drawing.Size(93, 22);
+            this.txtExportDataDrivers.Text = "TXT";
             // 
             // rutesToolStripMenuItem
             // 
             this.rutesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tXTToolStripMenuItem2});
+            this.txtExportDataRutes});
             this.rutesToolStripMenuItem.Name = "rutesToolStripMenuItem";
-            this.rutesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.rutesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rutesToolStripMenuItem.Text = "Rutes";
             // 
-            // tXTToolStripMenuItem2
+            // txtExportDataRutes
             // 
-            this.tXTToolStripMenuItem2.Name = "tXTToolStripMenuItem2";
-            this.tXTToolStripMenuItem2.Size = new System.Drawing.Size(93, 22);
-            this.tXTToolStripMenuItem2.Text = "TXT";
+            this.txtExportDataRutes.Name = "txtExportDataRutes";
+            this.txtExportDataRutes.Size = new System.Drawing.Size(93, 22);
+            this.txtExportDataRutes.Text = "TXT";
             // 
             // transportsToolStripMenuItem1
             // 
             this.transportsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tXTToolStripMenuItem3});
+            this.txtExportDataTransports});
             this.transportsToolStripMenuItem1.Name = "transportsToolStripMenuItem1";
-            this.transportsToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.transportsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.transportsToolStripMenuItem1.Text = "Transports";
             // 
-            // tXTToolStripMenuItem3
+            // txtExportDataTransports
             // 
-            this.tXTToolStripMenuItem3.Name = "tXTToolStripMenuItem3";
-            this.tXTToolStripMenuItem3.Size = new System.Drawing.Size(93, 22);
-            this.tXTToolStripMenuItem3.Text = "TXT";
+            this.txtExportDataTransports.Name = "txtExportDataTransports";
+            this.txtExportDataTransports.Size = new System.Drawing.Size(93, 22);
+            this.txtExportDataTransports.Text = "TXT";
             // 
             // carsToolStripMenuItem
             // 
@@ -159,7 +159,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewCarsToolStripMenuItem.Name = "viewCarsToolStripMenuItem";
             this.viewCarsToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.viewCarsToolStripMenuItem.Text = "View Cars";
-            this.viewCarsToolStripMenuItem.Click += new System.EventHandler(this.viewCarsToolStripMenuItem_Click);
+            this.viewCarsToolStripMenuItem.Click += new System.EventHandler(this.ViewCarsToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 
@@ -174,7 +174,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewDriversToolStripMenuItem.Name = "viewDriversToolStripMenuItem";
             this.viewDriversToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.viewDriversToolStripMenuItem.Text = "View Drivers";
-            this.viewDriversToolStripMenuItem.Click += new System.EventHandler(this.viewDriversToolStripMenuItem_Click);
+            this.viewDriversToolStripMenuItem.Click += new System.EventHandler(this.ViewDriversToolStripMenuItem_Click);
             // 
             // ruteToolStripMenuItem
             // 
@@ -189,7 +189,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewRutesToolStripMenuItem.Name = "viewRutesToolStripMenuItem";
             this.viewRutesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.viewRutesToolStripMenuItem.Text = "View Rutes";
-            this.viewRutesToolStripMenuItem.Click += new System.EventHandler(this.viewRutesToolStripMenuItem_Click);
+            this.viewRutesToolStripMenuItem.Click += new System.EventHandler(this.ViewRutesToolStripMenuItem_Click);
             // 
             // transportsToolStripMenuItem
             // 
@@ -202,9 +202,9 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // viewTransportsToolStripMenuItem
             // 
             this.viewTransportsToolStripMenuItem.Name = "viewTransportsToolStripMenuItem";
-            this.viewTransportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewTransportsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.viewTransportsToolStripMenuItem.Text = "View Transports";
-            this.viewTransportsToolStripMenuItem.Click += new System.EventHandler(this.viewTransportsToolStripMenuItem_Click);
+            this.viewTransportsToolStripMenuItem.Click += new System.EventHandler(this.ViewTransportsToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
@@ -217,7 +217,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // dtGridList
             // 
@@ -266,9 +266,9 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem rutesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transportsToolStripMenuItem1;
         private System.Windows.Forms.DataGridView dtGridList;
-        private System.Windows.Forms.ToolStripMenuItem txtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem txtExportDataCar;
+        private System.Windows.Forms.ToolStripMenuItem txtExportDataDrivers;
+        private System.Windows.Forms.ToolStripMenuItem txtExportDataRutes;
+        private System.Windows.Forms.ToolStripMenuItem txtExportDataTransports;
     }
 }

@@ -50,7 +50,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.dtGridList.Name = "dtGridList";
             this.dtGridList.Size = new System.Drawing.Size(776, 410);
             this.dtGridList.TabIndex = 10;
-            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridList_CellClick);
+            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
             // 
             // toolStrip1
             // 
@@ -76,7 +76,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(23, 22);
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // txtIdTransport
             // 
@@ -104,7 +104,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnUpdateTransport.Name = "btnUpdateTransport";
             this.btnUpdateTransport.Size = new System.Drawing.Size(23, 22);
             this.btnUpdateTransport.Text = "UpdateRute";
-            this.btnUpdateTransport.Click += new System.EventHandler(this.btnUpdateTransport_Click);
+            this.btnUpdateTransport.Click += new System.EventHandler(this.BtnUpdateTransport_Click);
             // 
             // btnDeleteTransport
             // 
@@ -114,7 +114,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnDeleteTransport.Name = "btnDeleteTransport";
             this.btnDeleteTransport.Size = new System.Drawing.Size(23, 22);
             this.btnDeleteTransport.Text = "DeleteRute";
-            this.btnDeleteTransport.Click += new System.EventHandler(this.btnDeleteTransport_Click);
+            this.btnDeleteTransport.Click += new System.EventHandler(this.BtnDeleteTransport_Click);
             // 
             // btnAddTransport
             // 
@@ -124,7 +124,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnAddTransport.Name = "btnAddTransport";
             this.btnAddTransport.Size = new System.Drawing.Size(23, 22);
             this.btnAddTransport.Text = "AddRute";
-            this.btnAddTransport.Click += new System.EventHandler(this.btnAddTransport_Click);
+            this.btnAddTransport.Click += new System.EventHandler(this.BtnAddTransport_Click);
             // 
             // InterfaceTransport
             // 

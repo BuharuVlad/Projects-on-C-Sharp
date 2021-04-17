@@ -8,7 +8,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 {
     class Driver : Car
     {
-        public static long? idDriver { get; set; }
+        public static long? IdDriver { get; set; }
         public string FirstNameDriver { get; set; }
         public string SecondNameDriver { get; set; }
         public string BirthDayDriver { get; set; }
@@ -26,7 +26,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
         public Driver()
         {
-            idDriver = 0;
+            IdDriver = 0;
             FirstNameDriver = "";
             SecondNameDriver = "";
             BirthDayDriver = "01.01.2013";

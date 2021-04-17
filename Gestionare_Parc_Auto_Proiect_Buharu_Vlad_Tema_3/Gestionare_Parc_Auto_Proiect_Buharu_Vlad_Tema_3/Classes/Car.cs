@@ -8,13 +8,13 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 {
     class Car
     {
-        public long? id { get; set; }
+        public long? Id { get; set; }
         public string NameCar { get; set; }
         public string ModelCar { get; set; }
 
         public Car()
         {
-            id = 0;
+            Id = 0;
             NameCar = "";
             ModelCar = "";
         }
