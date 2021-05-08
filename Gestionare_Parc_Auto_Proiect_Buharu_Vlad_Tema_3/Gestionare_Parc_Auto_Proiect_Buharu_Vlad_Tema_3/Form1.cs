@@ -57,16 +57,13 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 {
                     if (ValidateChildren(ValidationConstraints.Enabled))
                     {
-                        MessageBox.Show(txtUsername.Text, "Message",
+                        MessageBox.Show(txtUsername.Text, @"Message",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    this.Hide();
-                    Dashbord dsa = new Dashbord();
-                    dsa.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Wrong UserName or Password", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Wrong UserName or Password", @"Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -82,5 +79,38 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 errorProvider.SetError(txtUsername, "Please enter your Username!");
             }
         }
+
+        #region Status Menu
+        private void txtUsername_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = ("Please insert your User name!");
+        }
+
+        private void txtPassword_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = ("Please insert your Password!");
+        }
+
+        private void txtUsername_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "";
+        }
+
+        private void txtPassword_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "";
+        }
+        private void btnLogin_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = ("Press Login!");
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "";
+        }
+
+
+        #endregion Status Menu
     }
 }

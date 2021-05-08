@@ -29,17 +29,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtExportDataCar = new System.Windows.Forms.ToolStripMenuItem();
-            this.driversToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtExportDataDrivers = new System.Windows.Forms.ToolStripMenuItem();
-            this.rutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtExportDataRutes = new System.Windows.Forms.ToolStripMenuItem();
-            this.transportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtExportDataTransports = new System.Windows.Forms.ToolStripMenuItem();
+            this.serializareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deserializareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +45,29 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtGridList = new System.Windows.Forms.DataGridView();
+            this.cbNameCar = new System.Windows.Forms.ComboBox();
+            this.txtProductsTransport = new System.Windows.Forms.TextBox();
+            this.txtQuantityTransport = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbModelCar = new System.Windows.Forms.ComboBox();
+            this.lbNameTransport = new System.Windows.Forms.Label();
+            this.lbQuantityProducts = new System.Windows.Forms.Label();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lbNameCar = new System.Windows.Forms.Label();
+            this.lbModelCar = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbNameRute = new System.Windows.Forms.ComboBox();
+            this.cbFirstSecondName = new System.Windows.Forms.ComboBox();
+            this.cbFirstNameDriver = new System.Windows.Forms.ComboBox();
+            this.txtFromRute = new System.Windows.Forms.TextBox();
+            this.txtToRute = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbSecondNameDriver = new System.Windows.Forms.ComboBox();
+            this.cbBirthDayDriver = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             this.SuspendLayout();
@@ -67,84 +84,30 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(702, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(967, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportDataToolStripMenuItem});
+            this.serializareToolStripMenuItem,
+            this.deserializareToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // exportDataToolStripMenuItem
+            // serializareToolStripMenuItem
             // 
-            this.exportDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carsToolStripMenuItem1,
-            this.driversToolStripMenuItem1,
-            this.rutesToolStripMenuItem,
-            this.transportsToolStripMenuItem1});
-            this.exportDataToolStripMenuItem.Name = "exportDataToolStripMenuItem";
-            this.exportDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportDataToolStripMenuItem.Text = "Export data";
+            this.serializareToolStripMenuItem.Name = "serializareToolStripMenuItem";
+            this.serializareToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.serializareToolStripMenuItem.Text = "Serializare";
             // 
-            // carsToolStripMenuItem1
+            // deserializareToolStripMenuItem
             // 
-            this.carsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtExportDataCar});
-            this.carsToolStripMenuItem1.Name = "carsToolStripMenuItem1";
-            this.carsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.carsToolStripMenuItem1.Text = "Cars";
-            // 
-            // txtExportDataCar
-            // 
-            this.txtExportDataCar.Name = "txtExportDataCar";
-            this.txtExportDataCar.Size = new System.Drawing.Size(180, 22);
-            this.txtExportDataCar.Text = "TXT";
-            // 
-            // driversToolStripMenuItem1
-            // 
-            this.driversToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtExportDataDrivers});
-            this.driversToolStripMenuItem1.Name = "driversToolStripMenuItem1";
-            this.driversToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.driversToolStripMenuItem1.Text = "Drivers";
-            // 
-            // txtExportDataDrivers
-            // 
-            this.txtExportDataDrivers.Name = "txtExportDataDrivers";
-            this.txtExportDataDrivers.Size = new System.Drawing.Size(93, 22);
-            this.txtExportDataDrivers.Text = "TXT";
-            // 
-            // rutesToolStripMenuItem
-            // 
-            this.rutesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtExportDataRutes});
-            this.rutesToolStripMenuItem.Name = "rutesToolStripMenuItem";
-            this.rutesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rutesToolStripMenuItem.Text = "Rutes";
-            // 
-            // txtExportDataRutes
-            // 
-            this.txtExportDataRutes.Name = "txtExportDataRutes";
-            this.txtExportDataRutes.Size = new System.Drawing.Size(93, 22);
-            this.txtExportDataRutes.Text = "TXT";
-            // 
-            // transportsToolStripMenuItem1
-            // 
-            this.transportsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtExportDataTransports});
-            this.transportsToolStripMenuItem1.Name = "transportsToolStripMenuItem1";
-            this.transportsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.transportsToolStripMenuItem1.Text = "Transports";
-            // 
-            // txtExportDataTransports
-            // 
-            this.txtExportDataTransports.Name = "txtExportDataTransports";
-            this.txtExportDataTransports.Size = new System.Drawing.Size(93, 22);
-            this.txtExportDataTransports.Text = "TXT";
+            this.deserializareToolStripMenuItem.Name = "deserializareToolStripMenuItem";
+            this.deserializareToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.deserializareToolStripMenuItem.Text = "Deserializare";
             // 
             // carsToolStripMenuItem
             // 
@@ -222,22 +185,263 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // dtGridList
             // 
             this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridList.Location = new System.Drawing.Point(12, 27);
+            this.dtGridList.Location = new System.Drawing.Point(12, 228);
             this.dtGridList.Name = "dtGridList";
-            this.dtGridList.Size = new System.Drawing.Size(678, 281);
+            this.dtGridList.Size = new System.Drawing.Size(943, 336);
             this.dtGridList.TabIndex = 1;
+            // 
+            // cbNameCar
+            // 
+            this.cbNameCar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbNameCar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNameCar.FormattingEnabled = true;
+            this.cbNameCar.Location = new System.Drawing.Point(94, 103);
+            this.cbNameCar.Name = "cbNameCar";
+            this.cbNameCar.Size = new System.Drawing.Size(154, 21);
+            this.cbNameCar.TabIndex = 2;
+            this.cbNameCar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbNameCar_KeyDown);
+            this.cbNameCar.Leave += new System.EventHandler(this.cbNameCar_Leave);
+            // 
+            // txtProductsTransport
+            // 
+            this.txtProductsTransport.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtProductsTransport.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtProductsTransport.Location = new System.Drawing.Point(94, 51);
+            this.txtProductsTransport.Name = "txtProductsTransport";
+            this.txtProductsTransport.Size = new System.Drawing.Size(154, 20);
+            this.txtProductsTransport.TabIndex = 3;
+            this.txtProductsTransport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductsTransport_KeyDown);
+            this.txtProductsTransport.Validating += new System.ComponentModel.CancelEventHandler(this.txtProductsTransport_Validating);
+            // 
+            // txtQuantityTransport
+            // 
+            this.txtQuantityTransport.Location = new System.Drawing.Point(94, 77);
+            this.txtQuantityTransport.Name = "txtQuantityTransport";
+            this.txtQuantityTransport.Size = new System.Drawing.Size(154, 20);
+            this.txtQuantityTransport.TabIndex = 4;
+            this.txtQuantityTransport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantityTransport_KeyDown);
+            this.txtQuantityTransport.Leave += new System.EventHandler(this.txtQuantityTransport_Leave);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // cbModelCar
+            // 
+            this.cbModelCar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbModelCar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbModelCar.FormattingEnabled = true;
+            this.cbModelCar.Location = new System.Drawing.Point(94, 130);
+            this.cbModelCar.Name = "cbModelCar";
+            this.cbModelCar.Size = new System.Drawing.Size(154, 21);
+            this.cbModelCar.TabIndex = 6;
+            // 
+            // lbNameTransport
+            // 
+            this.lbNameTransport.AutoSize = true;
+            this.lbNameTransport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameTransport.Location = new System.Drawing.Point(12, 52);
+            this.lbNameTransport.Name = "lbNameTransport";
+            this.lbNameTransport.Size = new System.Drawing.Size(69, 16);
+            this.lbNameTransport.TabIndex = 7;
+            this.lbNameTransport.Text = "Products";
+            // 
+            // lbQuantityProducts
+            // 
+            this.lbQuantityProducts.AutoSize = true;
+            this.lbQuantityProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantityProducts.Location = new System.Drawing.Point(12, 79);
+            this.lbQuantityProducts.Name = "lbQuantityProducts";
+            this.lbQuantityProducts.Size = new System.Drawing.Size(64, 16);
+            this.lbQuantityProducts.TabIndex = 8;
+            this.lbQuantityProducts.Text = "Quantity";
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lbNameCar
+            // 
+            this.lbNameCar.AutoSize = true;
+            this.lbNameCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameCar.Location = new System.Drawing.Point(12, 108);
+            this.lbNameCar.Name = "lbNameCar";
+            this.lbNameCar.Size = new System.Drawing.Size(77, 16);
+            this.lbNameCar.TabIndex = 9;
+            this.lbNameCar.Text = "Name Car";
+            // 
+            // lbModelCar
+            // 
+            this.lbModelCar.AutoSize = true;
+            this.lbModelCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbModelCar.Location = new System.Drawing.Point(12, 135);
+            this.lbModelCar.Name = "lbModelCar";
+            this.lbModelCar.Size = new System.Drawing.Size(79, 16);
+            this.lbModelCar.TabIndex = 10;
+            this.lbModelCar.Text = "Model Car";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(301, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Rute";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(301, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "From";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(301, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 16);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "To";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(301, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "First Name";
+            // 
+            // cbNameRute
+            // 
+            this.cbNameRute.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbNameRute.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNameRute.FormattingEnabled = true;
+            this.cbNameRute.Location = new System.Drawing.Point(396, 50);
+            this.cbNameRute.Name = "cbNameRute";
+            this.cbNameRute.Size = new System.Drawing.Size(154, 21);
+            this.cbNameRute.TabIndex = 19;
+            this.cbNameRute.SelectedIndexChanged += new System.EventHandler(this.cbNameRute_SelectedIndexChanged);
+            // 
+            // cbFirstSecondName
+            // 
+            this.cbFirstSecondName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFirstSecondName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbFirstSecondName.FormattingEnabled = true;
+            this.cbFirstSecondName.Location = new System.Drawing.Point(396, 130);
+            this.cbFirstSecondName.Name = "cbFirstSecondName";
+            this.cbFirstSecondName.Size = new System.Drawing.Size(154, 21);
+            this.cbFirstSecondName.TabIndex = 22;
+            // 
+            // cbFirstNameDriver
+            // 
+            this.cbFirstNameDriver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFirstNameDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbFirstNameDriver.FormattingEnabled = true;
+            this.cbFirstNameDriver.Location = new System.Drawing.Point(396, 130);
+            this.cbFirstNameDriver.Name = "cbFirstNameDriver";
+            this.cbFirstNameDriver.Size = new System.Drawing.Size(154, 21);
+            this.cbFirstNameDriver.TabIndex = 22;
+            this.cbFirstNameDriver.Leave += new System.EventHandler(this.cbFirstNameDriver_Leave);
+            // 
+            // txtFromRute
+            // 
+            this.txtFromRute.Location = new System.Drawing.Point(396, 79);
+            this.txtFromRute.Name = "txtFromRute";
+            this.txtFromRute.Size = new System.Drawing.Size(154, 20);
+            this.txtFromRute.TabIndex = 23;
+            // 
+            // txtToRute
+            // 
+            this.txtToRute.Location = new System.Drawing.Point(396, 104);
+            this.txtToRute.Name = "txtToRute";
+            this.txtToRute.Size = new System.Drawing.Size(154, 20);
+            this.txtToRute.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(571, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Last Name";
+            // 
+            // cbSecondNameDriver
+            // 
+            this.cbSecondNameDriver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSecondNameDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbSecondNameDriver.FormattingEnabled = true;
+            this.cbSecondNameDriver.Location = new System.Drawing.Point(659, 52);
+            this.cbSecondNameDriver.Name = "cbSecondNameDriver";
+            this.cbSecondNameDriver.Size = new System.Drawing.Size(194, 21);
+            this.cbSecondNameDriver.TabIndex = 26;
+            this.cbSecondNameDriver.Leave += new System.EventHandler(this.cbSecondNameDriver_Leave);
+            // 
+            // cbBirthDayDriver
+            // 
+            this.cbBirthDayDriver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbBirthDayDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbBirthDayDriver.FormattingEnabled = true;
+            this.cbBirthDayDriver.Location = new System.Drawing.Point(659, 81);
+            this.cbBirthDayDriver.Name = "cbBirthDayDriver";
+            this.cbBirthDayDriver.Size = new System.Drawing.Size(194, 21);
+            this.cbBirthDayDriver.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(571, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Birth Date";
             // 
             // Dashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 345);
+            this.ClientSize = new System.Drawing.Size(967, 576);
+            this.Controls.Add(this.cbBirthDayDriver);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbSecondNameDriver);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtToRute);
+            this.Controls.Add(this.txtFromRute);
+            this.Controls.Add(this.cbFirstNameDriver);
+            this.Controls.Add(this.cbFirstSecondName);
+            this.Controls.Add(this.cbNameRute);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbModelCar);
+            this.Controls.Add(this.lbNameCar);
+            this.Controls.Add(this.lbQuantityProducts);
+            this.Controls.Add(this.lbNameTransport);
+            this.Controls.Add(this.cbModelCar);
+            this.Controls.Add(this.txtQuantityTransport);
+            this.Controls.Add(this.txtProductsTransport);
+            this.Controls.Add(this.cbNameCar);
             this.Controls.Add(this.dtGridList);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dashbord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashbord";
+            this.Load += new System.EventHandler(this.Dashbord_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).EndInit();
@@ -260,15 +464,31 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportDataToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem rutesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transportsToolStripMenuItem1;
         private System.Windows.Forms.DataGridView dtGridList;
-        private System.Windows.Forms.ToolStripMenuItem txtExportDataCar;
-        private System.Windows.Forms.ToolStripMenuItem txtExportDataDrivers;
-        private System.Windows.Forms.ToolStripMenuItem txtExportDataRutes;
-        private System.Windows.Forms.ToolStripMenuItem txtExportDataTransports;
+        private System.Windows.Forms.ComboBox cbNameCar;
+        private System.Windows.Forms.TextBox txtProductsTransport;
+        private System.Windows.Forms.TextBox txtQuantityTransport;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ComboBox cbModelCar;
+        private System.Windows.Forms.Label lbNameTransport;
+        private System.Windows.Forms.Label lbQuantityProducts;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem serializareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deserializareToolStripMenuItem;
+        private System.Windows.Forms.Label lbNameCar;
+        private System.Windows.Forms.Label lbModelCar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbNameRute;
+        private System.Windows.Forms.ComboBox cbFirstSecondName;
+        private System.Windows.Forms.ComboBox cbFirstNameDriver;
+        private System.Windows.Forms.TextBox txtFromRute;
+        private System.Windows.Forms.TextBox txtToRute;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbSecondNameDriver;
+        private System.Windows.Forms.ComboBox cbBirthDayDriver;
+        private System.Windows.Forms.Label label6;
     }
 }

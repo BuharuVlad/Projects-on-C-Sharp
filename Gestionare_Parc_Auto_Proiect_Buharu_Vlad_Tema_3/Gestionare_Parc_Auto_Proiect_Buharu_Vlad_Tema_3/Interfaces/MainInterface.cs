@@ -5,10 +5,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
@@ -26,6 +22,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private const string ConnectionRute = "Data Source=Rute.db";
         private const string ConnectionTransport = "Data Source=Transport.db";
 
+        bool testClickEventCar = false, testClickEventRuteFrom = false, testClickEventRuteTo = false;
+
         #endregion
         public Dashbord()
         {
@@ -34,6 +32,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             _drivers = new List<Driver>();
             _rutes = new List<Rute>();
             _transports = new List<Transport>();
+            CheckProductsTransport();
         }
 
         #region  Buttons 
@@ -69,7 +68,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         #endregion
 
         #region Methods
-
+        #region Convert methods from SQLite in List
         public void ConvertSQLiteDataInCar()
         {
             using (SQLiteConnection connect = new SQLiteConnection(ConnectionCar))
@@ -104,9 +103,10 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                         string FirstName = (string)r["FirstName"];
                         string SecondName = (string)r["SecondName"];
                         string BirthDay = (string)r["BirthDay"];
+                        DateTime birthDateTime = DateTime.Parse(BirthDay);
                         long Salary = (Int64)r["Salary"]; 
                         string Adress = (string)r["Adress"];
-                        _drivers.Add(new Driver(FirstName, SecondName,BirthDay, Adress, Salary));
+                        _drivers.Add(new Driver(FirstName, SecondName, birthDateTime, Adress, Salary));
                     }
                 }
             }
@@ -144,15 +144,190 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                     while (r.Read())
                     {
                         string ProductTransport = (string)r["ProductTransport"];
-                        int QuantityTransport = (int)r["QuantityTransport"];
+                        var quantityVar = r["QuantityTransport"];
+                        int QuantityTransport = int.Parse(string.Format("{0}", quantityVar));
                         _transports.Add(new Transport(ProductTransport, QuantityTransport));
                     }
                 }
             }
         } // ConvertSQLiteDateInTransport
+        #endregion // Convert methods from SQLite in List
+
+        #region Check TextBoxs, Enter
+
+        private void CheckProductsTransport()
+        {
+            ConvertSQLiteDateInTransport();
+            txtProductsTransport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtProductsTransport.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            foreach(Transport transport in _transports)
+            {
+                coll.Add(transport.ProductTransport);
+            }
+            txtProductsTransport.AutoCompleteCustomSource = coll;
+        }
+
+        private void CheckQuantityTransport()
+        {
+            ConvertSQLiteDateInTransport();
+            foreach (Transport transport in _transports)
+            {
+               if(txtProductsTransport.Text == transport.ProductTransport)
+                {
+                    if (txtQuantityTransport.Text != transport.QuantityTransport.ToString())
+                    {
+                        MessageBox.Show(@"this quantity is wrong!", @"Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+                        txtQuantityTransport.Focus();
+                    }
+                }
+            }
+        }
+
+        private void Dashbord_Load(object sender, EventArgs e)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(ConnectionCar))
+            {
+                SQLiteCommand cmd;
+                cmd = new SQLiteCommand("SELECT DISTINCT NameCar FROM Cars", con);
+                con.Open();
+                SQLiteDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cbNameCar.Items.Add(dr.GetString(0));
+                }
+            }
+
+            using (SQLiteConnection con = new SQLiteConnection(ConnectionRute))
+            {
+                SQLiteCommand cmd;
+                cmd = new SQLiteCommand("SELECT DISTINCT NameRute FROM Rute", con);
+                con.Open();
+                SQLiteDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cbNameRute.Items.Add(dr.GetString(0));
+                }
+            }
+
+            using (SQLiteConnection con = new SQLiteConnection(ConnectionDriver))
+            {
+                SQLiteCommand cmd;
+                cmd = new SQLiteCommand("SELECT FirstName FROM Drivers", con);
+                con.Open();
+                SQLiteDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cbFirstNameDriver.Items.Add(dr.GetString(0));
+                }
+            }
+
+        }
+
+        #endregion //Check TextBoxs, Enter
+        #endregion // Methods
 
 
+        #region KeyDown
+        private void txtProductsTransport_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtQuantityTransport.Focus();
+            }
+        }
 
-        #endregion
+        private void txtQuantityTransport_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cbNameCar.Focus();
+            }
+        }
+        private void cbNameCar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cbModelCar.Focus();
+            }
+        }
+
+        #endregion KeyDown
+        
+        private void txtProductsTransport_Validating(object sender, CancelEventArgs e)
+        {
+            
+            foreach (Transport transport in _transports)
+            {
+                if (txtProductsTransport.Text.Equals(transport.ProductTransport))
+                {
+                    break;
+                }
+                else
+                {
+                    ErrorProvider errorProvider = new ErrorProvider();
+                    e.Cancel = true;
+                    txtProductsTransport.Focus();
+                    errorProvider.SetError((Control)txtProductsTransport, "Check the list again!"); 
+                }
+            }
+        }
+
+        private void cbFirstNameDriver_Leave(object sender, EventArgs e)
+        {
+            
+            foreach (var driver in _drivers)
+            {
+                if (cbFirstNameDriver.Text.Equals(driver.FirstNameDriver))
+                {
+                    cbSecondNameDriver.Items.Add(driver.SecondNameDriver);
+                }
+            }
+        }
+        private void cbSecondNameDriver_Leave(object sender, EventArgs e)
+        {
+            ConvertSQLiteDataInDriver();
+            foreach (var driver in _drivers)
+            {
+                if (cbSecondNameDriver.Text.Equals(driver.SecondNameDriver))
+                {
+                    cbBirthDayDriver.Items.Add(driver.BirthDayDriver);
+                }
+            }
+        }
+
+        private void cbNameCar_Leave(object sender, EventArgs e)
+        {
+            ConvertSQLiteDataInCar();
+            foreach (var car in _cars)
+            {
+                if (cbNameCar.Text.Equals(car.NameCar))
+                {
+                    cbModelCar.Items.Add(car.ModelCar);
+                }
+            }
+        }
+
+        
+
+        private void cbNameRute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConvertSQLiteDateInRute();
+            foreach (var rute in _rutes)
+            {
+                if (cbNameRute.Text.Equals(rute.NameRute))
+                {
+                    txtFromRute.Text = rute.FromRute;
+                    txtToRute.Text = rute.ToRute;
+                }
+            }
+
+        }
+
+        private void txtQuantityTransport_Leave(object sender, EventArgs e)
+        {
+            CheckQuantityTransport();
+        }
+
     }//Dashbord
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

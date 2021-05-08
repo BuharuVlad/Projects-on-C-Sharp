@@ -1,7 +1,4 @@
 NameCar,ModelCar
-Model1 Scandia
-Model1 MAN
-Model2 Scandia
-Model1 Scandia
-Model1 MAN
-Model2 Scandia
+Scandia, Model1
+Scandia, Model2
+Scandia, Model3

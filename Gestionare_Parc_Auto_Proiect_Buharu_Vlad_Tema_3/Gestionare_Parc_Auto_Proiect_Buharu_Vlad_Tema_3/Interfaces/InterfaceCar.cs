@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
@@ -29,14 +24,14 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
 
         }//DisplayCar
 
-        private void InsertUpdateDeleteCar(string Query)
+        private void InsertUpdateDeleteCar(string query)
         {
             SQLiteConnection connection = new SQLiteConnection(ConnectionCar);
             connection.Open();
             SQLiteCommand cmd = new SQLiteCommand
             {
                 Connection = connection,
-                CommandText = Query
+                CommandText = query
             };
             using (SQLiteDataReader sdr = cmd.ExecuteReader())
             {
@@ -57,7 +52,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Click only in the left side of the window, next to id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Click only in the left side of the window, next to id", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         } // dtGridList_CellClick
 
@@ -69,9 +64,16 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
 
         private void BtnUpdateCar_Click(object sender, EventArgs e)
         {
-            string query = "update Cars set NameCar = '" + txtUpdateNameCar + "', ModelCar = '" + txtUpdateModelCar + "' where id = '" + txtUpdateIdCar + "' ;";
-            InsertUpdateDeleteCar(query);
-            DisplayCar();
+           if (txtUpdateNameCar.Text == @"Scandia" && txtUpdateNameCar.Text == "Man")
+           {
+               string query = "update Cars set NameCar = '" + txtUpdateNameCar + "', ModelCar = '" + txtUpdateModelCar + "' where id = '" + txtUpdateIdCar + "' ;";
+               InsertUpdateDeleteCar(query);
+               DisplayCar();
+           }
+           else
+           {
+                MessageBox.Show(@"Please insert the corect name!", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }           
         } // btnUpdateCar_Click
 
         private void BtnDeleteCar_Click(object sender, EventArgs e)
@@ -130,6 +132,10 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
                 }
             }
             return carsTxt;
+        }
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

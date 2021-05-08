@@ -25,7 +25,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             }
             else
             {
-               MessageBox.Show("Please write the name or the model of the car!", "Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               MessageBox.Show(@"Please write the name or the model of the car!", @"Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }//SaveCar_Click
         private void AddCarsSQLite(Car car)
@@ -68,9 +68,9 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
         private void CancelCar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure? Data will be delete!", "Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            MessageBox.Show(@"Are you sure? Data will be delete!", @"Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             this.Close();
-        }//CancelCar_Click        
+        }//CancelCar_Click 
     }//AddCars
 
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

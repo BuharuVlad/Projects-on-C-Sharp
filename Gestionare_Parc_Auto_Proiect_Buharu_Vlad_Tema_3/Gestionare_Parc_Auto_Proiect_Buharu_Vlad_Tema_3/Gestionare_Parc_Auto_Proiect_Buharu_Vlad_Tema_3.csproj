@@ -161,6 +161,8 @@
     <None Include="bin\Debug\Drivers.db" />
     <None Include="bin\Debug\libraryManagement.db" />
     <None Include="bin\Debug\Cars.db" />
+    <None Include="bin\Debug\Rute.db" />
+    <None Include="bin\Debug\Transport.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

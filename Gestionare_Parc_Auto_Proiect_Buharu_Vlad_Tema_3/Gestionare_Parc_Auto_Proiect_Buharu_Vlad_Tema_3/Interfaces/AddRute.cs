@@ -32,7 +32,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             }
             else
             {
-                MessageBox.Show("Please write all the date about the driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please write all the date about the driver!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -74,7 +74,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
         private void btnCancelRute_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure? Data will be delete!", "Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            MessageBox.Show(@"Are you sure? Data will be delete!", @"Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             this.Close();
         }
     }

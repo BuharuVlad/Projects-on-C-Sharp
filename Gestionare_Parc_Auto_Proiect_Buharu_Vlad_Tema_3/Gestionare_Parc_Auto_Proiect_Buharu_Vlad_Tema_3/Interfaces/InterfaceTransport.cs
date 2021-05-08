@@ -56,7 +56,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Click only in the left side of the window, next to id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Click only in the left side of the window, next to id", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void DisplayTransport()

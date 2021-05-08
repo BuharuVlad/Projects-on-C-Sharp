@@ -29,6 +29,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfaceCar));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
@@ -40,8 +41,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnAddCar = new System.Windows.Forms.ToolStripButton();
             this.btnSerializareTxt = new System.Windows.Forms.ToolStripButton();
             this.dtGridList = new System.Windows.Forms.DataGridView();
+            this.clickRight = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
+            this.clickRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -132,11 +136,26 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             // dtGridList
             // 
             this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridList.ContextMenuStrip = this.clickRight;
             this.dtGridList.Location = new System.Drawing.Point(12, 28);
             this.dtGridList.Name = "dtGridList";
             this.dtGridList.Size = new System.Drawing.Size(776, 281);
             this.dtGridList.TabIndex = 5;
             this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
+            // 
+            // clickRight
+            // 
+            this.clickRight.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem});
+            this.clickRight.Name = "clickRight";
+            this.clickRight.Size = new System.Drawing.Size(181, 48);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // InterfaceCar
             // 
@@ -150,6 +169,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).EndInit();
+            this.clickRight.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +187,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
         private System.Windows.Forms.DataGridView dtGridList;
         private System.Windows.Forms.ToolStripButton btnAddCar;
         private System.Windows.Forms.ToolStripButton btnSerializareTxt;
+        private System.Windows.Forms.ContextMenuStrip clickRight;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
     }
 }

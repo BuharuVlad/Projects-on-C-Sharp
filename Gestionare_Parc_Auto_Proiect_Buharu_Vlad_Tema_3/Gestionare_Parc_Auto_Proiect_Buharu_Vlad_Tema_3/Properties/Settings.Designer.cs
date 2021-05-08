@@ -25,5 +25,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Properties
                 return defaultInstance;
             }
         }
+        
     }
 }

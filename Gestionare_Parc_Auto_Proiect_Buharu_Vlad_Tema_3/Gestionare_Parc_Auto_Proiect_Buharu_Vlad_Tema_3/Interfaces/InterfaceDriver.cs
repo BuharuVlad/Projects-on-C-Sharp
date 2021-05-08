@@ -65,7 +65,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             }
             catch (Exception)
             {
-                MessageBox.Show("Click only in the left side of the window, next to id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Click only in the left side of the window, next to id", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -76,10 +76,12 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
 
         private void BtnUpdateDriver_Click(object sender, EventArgs e)
         {
-            
+            DateTime birthDayDriver = new DateTime();
+            birthDayDriver = DateTime.Parse(txtBirthDayDriver.Text);
+            string birth = birthDayDriver.ToLongDateString();
             string query = "update Drivers set FirstName = '" + txtFirstNameDriver + "'," +
                 " SecondName = '" + txtSecondNameDriver + "', " +
-                "BirthDay = '" + txtBirthDayDriver + "', " +
+                "BirthDay = '" + birth + "', " +
                 "Salary = '" + txtSalaryDriver + "'," +
                 "Adress = '" + txtAdressDriver + "'" +
                 "where id = '" + txtIdDriver + "' ;";
@@ -131,7 +133,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
                     {
                         string Driver = (string)r["FirstName"] + " " 
                             + (string)r["SecondName"] + "," 
-                            + (string)r["BirthDay"] + "," 
+                            + (DateTime)r["BirthDay"] + "," 
                             + (Int64)r["Salary"] + "," 
                             + (string)r["Adress"];
                         DriversTxt.Add(Driver);

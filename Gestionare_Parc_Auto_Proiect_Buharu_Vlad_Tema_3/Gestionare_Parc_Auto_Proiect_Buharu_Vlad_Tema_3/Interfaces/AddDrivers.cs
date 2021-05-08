@@ -28,18 +28,18 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                  && txtBirthDayDriver.Text != " " && txtAdressDriver.Text != "" && txtSalaryDriver.Text != " ")
             {
                 Driver driver = new Driver(txtFirstNameDriver.Text, txtSecondNameDriver.Text,
-                    txtBirthDayDriver.Text, txtAdressDriver.Text, float.Parse(txtSalaryDriver.Text));
+                    DateTime.Parse(txtBirthDayDriver.Text), txtAdressDriver.Text, float.Parse(txtSalaryDriver.Text));
                 AddDriversSQLite(driver);
             }
             else
             {
-                MessageBox.Show("Please write all the date about the driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please write all the date about the driver!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnCancelDriver_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure? Data will be delete!", "Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            MessageBox.Show(@"Are you sure? Data will be delete!", @"Unsaved data", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             this.Close();
         }
 
@@ -60,7 +60,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 var SecondNameDriver = new SQLiteParameter("@SecondNameDriver");
                 SecondNameDriver.Value = driver.SecondNameDriver;
                 var BirthDayDriver = new SQLiteParameter("@BirthDayDriver");
-                BirthDayDriver.Value = driver.BirthDayDriver;
+                BirthDayDriver.Value = driver.BirthDayDriver.AddDays(3).ToLongDateString();
                 var SalaryDriver = new SQLiteParameter("@SalaryDriver");
                 SalaryDriver.Value = driver.SalaryDriver;
                 var AdressDriver = new SQLiteParameter("@AdressDriver");
