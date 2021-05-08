@@ -272,6 +272,37 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 }
             }
         }
+        private void txtQuantityTransport_Leave(object sender, EventArgs e)
+        {
+            CheckQuantityTransport();
+        }
+
+        private void cbNameCar_Leave(object sender, EventArgs e)
+        {
+            ConvertSQLiteDataInCar();
+            foreach (var car in _cars)
+            {
+                if (cbNameCar.Text.Equals(car.NameCar))
+                {
+                    cbModelCar.Items.Add(car.ModelCar);
+                }
+            }
+        }
+
+
+        private void cbNameRute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConvertSQLiteDateInRute();
+            foreach (var rute in _rutes)
+            {
+                if (cbNameRute.Text.Equals(rute.NameRute))
+                {
+                    txtFromRute.Text = rute.FromRute;
+                    txtToRute.Text = rute.ToRute;
+                }
+            }
+
+        }
 
         private void cbFirstNameDriver_Leave(object sender, EventArgs e)
         {
@@ -295,39 +326,5 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 }
             }
         }
-
-        private void cbNameCar_Leave(object sender, EventArgs e)
-        {
-            ConvertSQLiteDataInCar();
-            foreach (var car in _cars)
-            {
-                if (cbNameCar.Text.Equals(car.NameCar))
-                {
-                    cbModelCar.Items.Add(car.ModelCar);
-                }
-            }
-        }
-
-        
-
-        private void cbNameRute_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ConvertSQLiteDateInRute();
-            foreach (var rute in _rutes)
-            {
-                if (cbNameRute.Text.Equals(rute.NameRute))
-                {
-                    txtFromRute.Text = rute.FromRute;
-                    txtToRute.Text = rute.ToRute;
-                }
-            }
-
-        }
-
-        private void txtQuantityTransport_Leave(object sender, EventArgs e)
-        {
-            CheckQuantityTransport();
-        }
-
     }//Dashbord
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
