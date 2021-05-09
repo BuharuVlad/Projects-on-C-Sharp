@@ -55,6 +55,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
             this.txtUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtUsername_MouseClick);
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             this.txtUsername.MouseLeave += new System.EventHandler(this.txtUsername_MouseLeave);
             this.txtUsername.MouseHover += new System.EventHandler(this.txtUsername_MouseHover);
             this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.TxtUsername_Validating);
@@ -71,7 +72,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtPassword.Size = new System.Drawing.Size(170, 15);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Password";
-            this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtPassword_MouseClick);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.MouseLeave += new System.EventHandler(this.txtPassword_MouseLeave);
             this.txtPassword.MouseHover += new System.EventHandler(this.txtPassword_MouseHover);
             // 

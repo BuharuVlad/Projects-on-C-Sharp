@@ -71,9 +71,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         #region Convert methods from SQLite in List
         public void ConvertSQLiteDataInCar()
         {
+            _cars.Clear();
             using (SQLiteConnection connect = new SQLiteConnection(ConnectionCar))
             {
                 connect.Open();
+                _cars.Clear();
                 using (SQLiteCommand command = connect.CreateCommand())
                 {
                     command.CommandText = "SELECT DISTINCT NameCar, ModelCar FROM Cars";
@@ -90,6 +92,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         } // ConvertSQLiteDataInCar
         public void ConvertSQLiteDataInDriver()
         {
+            _drivers.Clear();
             using (SQLiteConnection connect = new SQLiteConnection(ConnectionDriver))
             {
                 connect.Open();
@@ -231,7 +234,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         #region KeyDown
         private void txtProductsTransport_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if(e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
             {
                 txtQuantityTransport.Focus();
             }
@@ -239,14 +242,14 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
         private void txtQuantityTransport_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
             {
                 cbNameCar.Focus();
             }
         }
         private void cbNameCar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
             {
                 cbModelCar.Focus();
             }
@@ -261,34 +264,17 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             {
                 if (txtProductsTransport.Text.Equals(transport.ProductTransport))
                 {
+                    errorProvider1.SetError((Control)txtProductsTransport, null);
                     break;
                 }
                 else
                 {
-                    ErrorProvider errorProvider = new ErrorProvider();
                     e.Cancel = true;
                     txtProductsTransport.Focus();
-                    errorProvider.SetError((Control)txtProductsTransport, "Check the list again!"); 
+                    errorProvider1.SetError((Control)txtProductsTransport, "Check the list again!"); 
                 }
             }
         }
-        private void txtQuantityTransport_Leave(object sender, EventArgs e)
-        {
-            CheckQuantityTransport();
-        }
-
-        private void cbNameCar_Leave(object sender, EventArgs e)
-        {
-            ConvertSQLiteDataInCar();
-            foreach (var car in _cars)
-            {
-                if (cbNameCar.Text.Equals(car.NameCar))
-                {
-                    cbModelCar.Items.Add(car.ModelCar);
-                }
-            }
-        }
-
 
         private void cbNameRute_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -302,6 +288,19 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 }
             }
 
+        }
+
+        private void cbNameCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbModelCar.Items.Clear();
+            ConvertSQLiteDataInCar();
+            foreach (var car in _cars)
+            {
+                if (cbNameCar.Text.Equals(car.NameCar))
+                {
+                    cbModelCar.Items.Add(car.ModelCar);
+                }
+            }
         }
 
         private void cbFirstNameDriver_Leave(object sender, EventArgs e)

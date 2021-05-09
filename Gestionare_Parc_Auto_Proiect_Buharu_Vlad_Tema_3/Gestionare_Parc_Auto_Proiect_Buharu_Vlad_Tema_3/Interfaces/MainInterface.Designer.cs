@@ -68,8 +68,10 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbSecondNameDriver = new System.Windows.Forms.ComboBox();
             this.cbBirthDayDriver = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -199,8 +201,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbNameCar.Name = "cbNameCar";
             this.cbNameCar.Size = new System.Drawing.Size(154, 21);
             this.cbNameCar.TabIndex = 2;
+            this.cbNameCar.SelectedIndexChanged += new System.EventHandler(this.cbNameCar_SelectedIndexChanged);
             this.cbNameCar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbNameCar_KeyDown);
-            this.cbNameCar.Leave += new System.EventHandler(this.cbNameCar_Leave);
             // 
             // txtProductsTransport
             // 
@@ -220,7 +222,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtQuantityTransport.Size = new System.Drawing.Size(154, 20);
             this.txtQuantityTransport.TabIndex = 4;
             this.txtQuantityTransport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantityTransport_KeyDown);
-            this.txtQuantityTransport.Leave += new System.EventHandler(this.txtQuantityTransport_Leave);
             // 
             // contextMenuStrip1
             // 
@@ -352,7 +353,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbFirstNameDriver.Name = "cbFirstNameDriver";
             this.cbFirstNameDriver.Size = new System.Drawing.Size(154, 21);
             this.cbFirstNameDriver.TabIndex = 22;
-            this.cbFirstNameDriver.Leave += new System.EventHandler(this.cbFirstNameDriver_Leave);
             // 
             // txtFromRute
             // 
@@ -409,6 +409,10 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.label6.TabIndex = 27;
             this.label6.Text = "Birth Date";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Dashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,6 +449,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,5 +495,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ComboBox cbSecondNameDriver;
         private System.Windows.Forms.ComboBox cbBirthDayDriver;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

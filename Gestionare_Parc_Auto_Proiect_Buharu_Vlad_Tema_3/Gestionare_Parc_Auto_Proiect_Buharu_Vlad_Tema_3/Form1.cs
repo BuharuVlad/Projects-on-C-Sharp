@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
@@ -30,7 +25,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 txtUsername.Clear();
             }
         }
-        private void TxtPassword_MouseClick(object sender, MouseEventArgs e)
+        private void txtPassword_Enter(object sender, EventArgs e)
         {
             //when you click on the textBox Password
             //the text will be delete
@@ -59,6 +54,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                     {
                         MessageBox.Show(txtUsername.Text, @"Message",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Dashbord dashbord = new Dashbord();
+                        dashbord.Show();
                     }
                 }
                 else
@@ -111,7 +108,15 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         }
 
 
+
         #endregion Status Menu
-        
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
+            {
+                txtPassword.Focus();
+            }
+        }
     }
 }
