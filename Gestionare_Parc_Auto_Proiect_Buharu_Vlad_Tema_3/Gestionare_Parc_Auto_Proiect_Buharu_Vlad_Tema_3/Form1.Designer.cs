@@ -73,6 +73,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             this.txtPassword.MouseLeave += new System.EventHandler(this.txtPassword_MouseLeave);
             this.txtPassword.MouseHover += new System.EventHandler(this.txtPassword_MouseHover);
             // 

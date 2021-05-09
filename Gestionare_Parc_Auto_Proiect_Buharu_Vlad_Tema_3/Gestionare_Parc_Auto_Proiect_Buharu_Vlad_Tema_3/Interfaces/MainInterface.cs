@@ -156,19 +156,19 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         } // ConvertSQLiteDateInTransport
         #endregion // Convert methods from SQLite in List
 
-        #region Check TextBoxs, Enter
+        #region Check TextBoxs
 
         private void CheckProductsTransport()
         {
             ConvertSQLiteDateInTransport();
-            txtProductsTransport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtProductsTransport.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cbProducts.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbProducts.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
             foreach(Transport transport in _transports)
             {
                 coll.Add(transport.ProductTransport);
             }
-            txtProductsTransport.AutoCompleteCustomSource = coll;
+            cbProducts.AutoCompleteCustomSource = coll;
         }
 
         private void CheckQuantityTransport()
@@ -176,7 +176,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             ConvertSQLiteDateInTransport();
             foreach (Transport transport in _transports)
             {
-               if(txtProductsTransport.Text == transport.ProductTransport)
+               if(cbProducts.Text == transport.ProductTransport)
                 {
                     if (txtQuantityTransport.Text != transport.QuantityTransport.ToString())
                     {
@@ -187,8 +187,23 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             }
         }
 
+        #endregion //Check TextBoxs
+
+        #region Start Dashbord && Connections with SQLite
+
         private void Dashbord_Load(object sender, EventArgs e)
         {
+            using (SQLiteConnection con = new SQLiteConnection(ConnectionTransport))
+            {
+                SQLiteCommand cmd;
+                cmd = new SQLiteCommand("SELECT DISTINCT ProductTransport FROM Transport", con);
+                con.Open();
+                SQLiteDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cbProducts.Items.Add(dr.GetString(0));
+                }
+            }
             using (SQLiteConnection con = new SQLiteConnection(ConnectionCar))
             {
                 SQLiteCommand cmd;
@@ -216,7 +231,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             using (SQLiteConnection con = new SQLiteConnection(ConnectionDriver))
             {
                 SQLiteCommand cmd;
-                cmd = new SQLiteCommand("SELECT FirstName FROM Drivers", con);
+                cmd = new SQLiteCommand("SELECT DISTINCT FirstName FROM Drivers", con);
                 con.Open();
                 SQLiteDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -224,22 +239,22 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                     cbFirstNameDriver.Items.Add(dr.GetString(0));
                 }
             }
-
         }
 
-        #endregion //Check TextBoxs, Enter
+        #endregion
+
+
         #endregion // Methods
 
 
         #region KeyDown
-        private void txtProductsTransport_KeyDown(object sender, KeyEventArgs e)
+        private void cbProducts_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
+            if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
             {
                 txtQuantityTransport.Focus();
             }
         }
-
         private void txtQuantityTransport_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
@@ -255,27 +270,53 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             }
         }
 
+
+
         #endregion KeyDown
-        
-        private void txtProductsTransport_Validating(object sender, CancelEventArgs e)
+
+        private void cbProducts_Validating(object sender, CancelEventArgs e)
         {
-            
             foreach (Transport transport in _transports)
             {
-                if (txtProductsTransport.Text.Equals(transport.ProductTransport))
+                if (cbProducts.Text.Equals(transport.ProductTransport))
                 {
-                    errorProvider1.SetError((Control)txtProductsTransport, null);
+                    errorProvider1.SetError((Control)cbProducts, null);
                     break;
                 }
                 else
                 {
                     e.Cancel = true;
-                    txtProductsTransport.Focus();
-                    errorProvider1.SetError((Control)txtProductsTransport, "Check the list again!"); 
+                    cbProducts.Focus();
+                    errorProvider1.SetError((Control)cbProducts, "Check the list again!");
                 }
             }
         }
 
+        #region Index Changed
+
+        private void cbProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConvertSQLiteDateInTransport();
+            foreach (var transport in _transports)
+            {
+                if (cbProducts.Text.Equals(transport.ProductTransport))
+                {
+                    txtQuantityTransport.Text = transport.QuantityTransport.ToString();
+                }
+            }
+        }
+        private void cbNameCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbModelCar.Items.Clear();
+            ConvertSQLiteDataInCar();
+            foreach (var car in _cars)
+            {
+                if (cbNameCar.Text.Equals(car.NameCar))
+                {
+                    cbModelCar.Items.Add(car.ModelCar);
+                }
+            }
+        }
         private void cbNameRute_SelectedIndexChanged(object sender, EventArgs e)
         {
             ConvertSQLiteDateInRute();
@@ -290,40 +331,42 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 
         }
 
-        private void cbNameCar_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbSecondNameDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbModelCar.Items.Clear();
-            ConvertSQLiteDataInCar();
-            foreach (var car in _cars)
+            txtBirthDateDriver.Clear();
+            if (txtBirthDateDriver.Text != null)
             {
-                if (cbNameCar.Text.Equals(car.NameCar))
-                {
-                    cbModelCar.Items.Add(car.ModelCar);
-                }
+                txtBirthDateDriver.Text = "";
             }
-        }
-
-        private void cbFirstNameDriver_Leave(object sender, EventArgs e)
-        {
-            
-            foreach (var driver in _drivers)
-            {
-                if (cbFirstNameDriver.Text.Equals(driver.FirstNameDriver))
-                {
-                    cbSecondNameDriver.Items.Add(driver.SecondNameDriver);
-                }
-            }
-        }
-        private void cbSecondNameDriver_Leave(object sender, EventArgs e)
-        {
             ConvertSQLiteDataInDriver();
             foreach (var driver in _drivers)
             {
                 if (cbSecondNameDriver.Text.Equals(driver.SecondNameDriver))
                 {
-                    cbBirthDayDriver.Items.Add(driver.BirthDayDriver);
+                    txtBirthDateDriver.Text = driver.BirthDayDriver.ToLongDateString();
                 }
             }
         }
+
+        private void cbFirstNameDriver_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbSecondNameDriver.Items.Clear();
+            txtBirthDateDriver.Clear();
+            if (cbSecondNameDriver.Text != null)
+            {
+                cbSecondNameDriver.Text = "";
+            }
+            if (txtBirthDateDriver.Text != null)
+            {
+                txtBirthDateDriver.Text = "";
+            }
+
+            ConvertSQLiteDataInDriver();
+            foreach (var driver in _drivers)
+                if (cbFirstNameDriver.Text.Equals(driver.FirstNameDriver)) cbSecondNameDriver.Items.Add(driver.SecondNameDriver);
+        }
+
+        #endregion
+
     }//Dashbord
 }//Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3

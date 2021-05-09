@@ -118,5 +118,13 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                 txtPassword.Focus();
             }
         }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter | e.KeyCode == Keys.Tab)
+            {
+                btnLogin.Focus();
+            }
+        }
     }
 }

@@ -46,7 +46,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtGridList = new System.Windows.Forms.DataGridView();
             this.cbNameCar = new System.Windows.Forms.ComboBox();
-            this.txtProductsTransport = new System.Windows.Forms.TextBox();
             this.txtQuantityTransport = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbModelCar = new System.Windows.Forms.ComboBox();
@@ -66,9 +65,10 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtToRute = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbSecondNameDriver = new System.Windows.Forms.ComboBox();
-            this.cbBirthDayDriver = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBirthDateDriver = new System.Windows.Forms.TextBox();
+            this.cbProducts = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -203,17 +203,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbNameCar.TabIndex = 2;
             this.cbNameCar.SelectedIndexChanged += new System.EventHandler(this.cbNameCar_SelectedIndexChanged);
             this.cbNameCar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbNameCar_KeyDown);
-            // 
-            // txtProductsTransport
-            // 
-            this.txtProductsTransport.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtProductsTransport.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtProductsTransport.Location = new System.Drawing.Point(94, 51);
-            this.txtProductsTransport.Name = "txtProductsTransport";
-            this.txtProductsTransport.Size = new System.Drawing.Size(154, 20);
-            this.txtProductsTransport.TabIndex = 3;
-            this.txtProductsTransport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductsTransport_KeyDown);
-            this.txtProductsTransport.Validating += new System.ComponentModel.CancelEventHandler(this.txtProductsTransport_Validating);
             // 
             // txtQuantityTransport
             // 
@@ -353,6 +342,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbFirstNameDriver.Name = "cbFirstNameDriver";
             this.cbFirstNameDriver.Size = new System.Drawing.Size(154, 21);
             this.cbFirstNameDriver.TabIndex = 22;
+            this.cbFirstNameDriver.SelectedIndexChanged += new System.EventHandler(this.cbFirstNameDriver_SelectedIndexChanged);
             // 
             // txtFromRute
             // 
@@ -387,17 +377,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbSecondNameDriver.Name = "cbSecondNameDriver";
             this.cbSecondNameDriver.Size = new System.Drawing.Size(194, 21);
             this.cbSecondNameDriver.TabIndex = 26;
-            this.cbSecondNameDriver.Leave += new System.EventHandler(this.cbSecondNameDriver_Leave);
-            // 
-            // cbBirthDayDriver
-            // 
-            this.cbBirthDayDriver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbBirthDayDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbBirthDayDriver.FormattingEnabled = true;
-            this.cbBirthDayDriver.Location = new System.Drawing.Point(659, 81);
-            this.cbBirthDayDriver.Name = "cbBirthDayDriver";
-            this.cbBirthDayDriver.Size = new System.Drawing.Size(194, 21);
-            this.cbBirthDayDriver.TabIndex = 28;
+            this.cbSecondNameDriver.SelectedIndexChanged += new System.EventHandler(this.cbSecondNameDriver_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -413,12 +393,33 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtBirthDateDriver
+            // 
+            this.txtBirthDateDriver.Location = new System.Drawing.Point(659, 82);
+            this.txtBirthDateDriver.Name = "txtBirthDateDriver";
+            this.txtBirthDateDriver.Size = new System.Drawing.Size(194, 20);
+            this.txtBirthDateDriver.TabIndex = 28;
+            // 
+            // cbProducts
+            // 
+            this.cbProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbProducts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbProducts.FormattingEnabled = true;
+            this.cbProducts.Location = new System.Drawing.Point(94, 47);
+            this.cbProducts.Name = "cbProducts";
+            this.cbProducts.Size = new System.Drawing.Size(154, 21);
+            this.cbProducts.TabIndex = 29;
+            this.cbProducts.SelectedIndexChanged += new System.EventHandler(this.cbProducts_SelectedIndexChanged);
+            this.cbProducts.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbProducts_KeyDown);
+            this.cbProducts.Validating += new System.ComponentModel.CancelEventHandler(this.cbProducts_Validating);
+            // 
             // Dashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 576);
-            this.Controls.Add(this.cbBirthDayDriver);
+            this.Controls.Add(this.cbProducts);
+            this.Controls.Add(this.txtBirthDateDriver);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbSecondNameDriver);
             this.Controls.Add(this.label5);
@@ -437,7 +438,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.Controls.Add(this.lbNameTransport);
             this.Controls.Add(this.cbModelCar);
             this.Controls.Add(this.txtQuantityTransport);
-            this.Controls.Add(this.txtProductsTransport);
             this.Controls.Add(this.cbNameCar);
             this.Controls.Add(this.dtGridList);
             this.Controls.Add(this.menuStrip1);
@@ -471,7 +471,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.DataGridView dtGridList;
         private System.Windows.Forms.ComboBox cbNameCar;
-        private System.Windows.Forms.TextBox txtProductsTransport;
         private System.Windows.Forms.TextBox txtQuantityTransport;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox cbModelCar;
@@ -493,8 +492,9 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.TextBox txtToRute;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSecondNameDriver;
-        private System.Windows.Forms.ComboBox cbBirthDayDriver;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtBirthDateDriver;
+        private System.Windows.Forms.ComboBox cbProducts;
     }
 }
