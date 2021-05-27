@@ -686,12 +686,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             }
         }
 
-        
-
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Paste();
-        }
         #endregion
 
         #region Drag and Drop
