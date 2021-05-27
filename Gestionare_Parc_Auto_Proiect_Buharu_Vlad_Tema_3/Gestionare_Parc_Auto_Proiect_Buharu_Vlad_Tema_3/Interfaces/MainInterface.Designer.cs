@@ -30,10 +30,17 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashbord));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serializareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deserializareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPrintSetup = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serializareBineraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deserializareBinaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,9 +49,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewRutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTransportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dtGridList = new System.Windows.Forms.DataGridView();
             this.cbNameCar = new System.Windows.Forms.ComboBox();
             this.txtQuantityTransport = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -69,8 +74,26 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtBirthDateDriver = new System.Windows.Forms.TextBox();
             this.cbProducts = new System.Windows.Forms.ComboBox();
+            this.btn_Add_Transport = new System.Windows.Forms.Button();
+            this.btn_View_All_List = new System.Windows.Forms.Button();
+            this.btn_Delete_Transport = new System.Windows.Forms.Button();
+            this.lvTransport = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,11 +101,11 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
             this.carsToolStripMenuItem,
             this.driversToolStripMenuItem,
             this.ruteToolStripMenuItem,
             this.transportsToolStripMenuItem,
-            this.printToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -93,23 +116,70 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serializareToolStripMenuItem,
-            this.deserializareToolStripMenuItem});
+            this.btnPrint,
+            this.btnPrintSetup,
+            this.printPreviewToolStripMenuItem,
+            this.serializareBineraToolStripMenuItem,
+            this.deserializareBinaraToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
-            // serializareToolStripMenuItem
+            // btnPrint
             // 
-            this.serializareToolStripMenuItem.Name = "serializareToolStripMenuItem";
-            this.serializareToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.serializareToolStripMenuItem.Text = "Serializare";
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(175, 22);
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // deserializareToolStripMenuItem
+            // btnPrintSetup
             // 
-            this.deserializareToolStripMenuItem.Name = "deserializareToolStripMenuItem";
-            this.deserializareToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.deserializareToolStripMenuItem.Text = "Deserializare";
+            this.btnPrintSetup.Name = "btnPrintSetup";
+            this.btnPrintSetup.Size = new System.Drawing.Size(175, 22);
+            this.btnPrintSetup.Text = "Print Setup";
+            this.btnPrintSetup.Click += new System.EventHandler(this.btnPrintSetup_Click);
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Preview";
+            this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
+            // 
+            // serializareBineraToolStripMenuItem
+            // 
+            this.serializareBineraToolStripMenuItem.Name = "serializareBineraToolStripMenuItem";
+            this.serializareBineraToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.serializareBineraToolStripMenuItem.Text = "Serializare binera";
+            // 
+            // deserializareBinaraToolStripMenuItem
+            // 
+            this.deserializareBinaraToolStripMenuItem.Name = "deserializareBinaraToolStripMenuItem";
+            this.deserializareBinaraToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.deserializareBinaraToolStripMenuItem.Text = "Deserializare binara";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // carsToolStripMenuItem
             // 
@@ -117,7 +187,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewCarsToolStripMenuItem});
             this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
             this.carsToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.carsToolStripMenuItem.Text = "Cars";
+            this.carsToolStripMenuItem.Text = "&Cars";
             // 
             // viewCarsToolStripMenuItem
             // 
@@ -132,7 +202,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewDriversToolStripMenuItem});
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
             this.driversToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.driversToolStripMenuItem.Text = "Drivers";
+            this.driversToolStripMenuItem.Text = "&Drivers";
             // 
             // viewDriversToolStripMenuItem
             // 
@@ -147,7 +217,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewRutesToolStripMenuItem});
             this.ruteToolStripMenuItem.Name = "ruteToolStripMenuItem";
             this.ruteToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.ruteToolStripMenuItem.Text = "Rutes";
+            this.ruteToolStripMenuItem.Text = "&Rutes";
             // 
             // viewRutesToolStripMenuItem
             // 
@@ -162,7 +232,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewTransportsToolStripMenuItem});
             this.transportsToolStripMenuItem.Name = "transportsToolStripMenuItem";
             this.transportsToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.transportsToolStripMenuItem.Text = "Transports";
+            this.transportsToolStripMenuItem.Text = "&Transports";
             // 
             // viewTransportsToolStripMenuItem
             // 
@@ -171,26 +241,12 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.viewTransportsToolStripMenuItem.Text = "View Transports";
             this.viewTransportsToolStripMenuItem.Click += new System.EventHandler(this.ViewTransportsToolStripMenuItem_Click);
             // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.printToolStripMenuItem.Text = "Print";
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            // 
-            // dtGridList
-            // 
-            this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridList.Location = new System.Drawing.Point(12, 228);
-            this.dtGridList.Name = "dtGridList";
-            this.dtGridList.Size = new System.Drawing.Size(943, 336);
-            this.dtGridList.TabIndex = 1;
             // 
             // cbNameCar
             // 
@@ -210,7 +266,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.txtQuantityTransport.Name = "txtQuantityTransport";
             this.txtQuantityTransport.Size = new System.Drawing.Size(154, 20);
             this.txtQuantityTransport.TabIndex = 4;
-            this.txtQuantityTransport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantityTransport_KeyDown);
             // 
             // contextMenuStrip1
             // 
@@ -413,11 +468,152 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.cbProducts.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbProducts_KeyDown);
             this.cbProducts.Validating += new System.ComponentModel.CancelEventHandler(this.cbProducts_Validating);
             // 
+            // btn_Add_Transport
+            // 
+            this.btn_Add_Transport.Location = new System.Drawing.Point(506, 181);
+            this.btn_Add_Transport.Name = "btn_Add_Transport";
+            this.btn_Add_Transport.Size = new System.Drawing.Size(75, 23);
+            this.btn_Add_Transport.TabIndex = 30;
+            this.btn_Add_Transport.Text = "Add";
+            this.btn_Add_Transport.UseVisualStyleBackColor = true;
+            this.btn_Add_Transport.Click += new System.EventHandler(this.btn_Add_Transport_Click);
+            // 
+            // btn_View_All_List
+            // 
+            this.btn_View_All_List.Location = new System.Drawing.Point(789, 181);
+            this.btn_View_All_List.Name = "btn_View_All_List";
+            this.btn_View_All_List.Size = new System.Drawing.Size(75, 23);
+            this.btn_View_All_List.TabIndex = 31;
+            this.btn_View_All_List.Text = "View All List";
+            this.btn_View_All_List.UseVisualStyleBackColor = true;
+            this.btn_View_All_List.Click += new System.EventHandler(this.btn_View_All_List_Click);
+            // 
+            // btn_Delete_Transport
+            // 
+            this.btn_Delete_Transport.Location = new System.Drawing.Point(696, 181);
+            this.btn_Delete_Transport.Name = "btn_Delete_Transport";
+            this.btn_Delete_Transport.Size = new System.Drawing.Size(75, 23);
+            this.btn_Delete_Transport.TabIndex = 32;
+            this.btn_Delete_Transport.Text = "Delete";
+            this.btn_Delete_Transport.UseVisualStyleBackColor = true;
+            this.btn_Delete_Transport.Click += new System.EventHandler(this.btn_Delete_Transport_Click);
+            // 
+            // lvTransport
+            // 
+            this.lvTransport.AllowDrop = true;
+            this.lvTransport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.lvTransport.FullRowSelect = true;
+            this.lvTransport.GridLines = true;
+            this.lvTransport.HideSelection = false;
+            this.lvTransport.Location = new System.Drawing.Point(13, 210);
+            this.lvTransport.Name = "lvTransport";
+            this.lvTransport.Size = new System.Drawing.Size(940, 350);
+            this.lvTransport.TabIndex = 34;
+            this.lvTransport.UseCompatibleStateImageBehavior = false;
+            this.lvTransport.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Products";
+            this.columnHeader1.Width = 70;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Quantity";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Name Car";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Model Car";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Rute";
+            this.columnHeader5.Width = 150;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "From";
+            this.columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "To";
+            this.columnHeader7.Width = 100;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "First Name";
+            this.columnHeader8.Width = 80;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Last Name";
+            this.columnHeader9.Width = 80;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Birth Day";
+            this.columnHeader10.Width = 130;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(599, 181);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 35;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(574, 108);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(279, 67);
+            this.richTextBox1.TabIndex = 36;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseDown);
+            // 
             // Dashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 576);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.lvTransport);
+            this.Controls.Add(this.btn_Delete_Transport);
+            this.Controls.Add(this.btn_View_All_List);
+            this.Controls.Add(this.btn_Add_Transport);
             this.Controls.Add(this.cbProducts);
             this.Controls.Add(this.txtBirthDateDriver);
             this.Controls.Add(this.label6);
@@ -439,7 +635,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.Controls.Add(this.cbModelCar);
             this.Controls.Add(this.txtQuantityTransport);
             this.Controls.Add(this.cbNameCar);
-            this.Controls.Add(this.dtGridList);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dashbord";
@@ -448,7 +643,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
             this.Load += new System.EventHandler(this.Dashbord_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -466,10 +660,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ToolStripMenuItem viewRutesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTransportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dtGridList;
         private System.Windows.Forms.ComboBox cbNameCar;
         private System.Windows.Forms.TextBox txtQuantityTransport;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -477,8 +669,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.Label lbNameTransport;
         private System.Windows.Forms.Label lbQuantityProducts;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem serializareToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deserializareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnPrint;
+        private System.Windows.Forms.ToolStripMenuItem btnPrintSetup;
         private System.Windows.Forms.Label lbNameCar;
         private System.Windows.Forms.Label lbModelCar;
         private System.Windows.Forms.Label label1;
@@ -496,5 +688,30 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtBirthDateDriver;
         private System.Windows.Forms.ComboBox cbProducts;
+        private System.Windows.Forms.Button btn_Delete_Transport;
+        private System.Windows.Forms.Button btn_View_All_List;
+        private System.Windows.Forms.Button btn_Add_Transport;
+        private System.Windows.Forms.ListView lvTransport;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.ToolStripMenuItem serializareBineraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deserializareBinaraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

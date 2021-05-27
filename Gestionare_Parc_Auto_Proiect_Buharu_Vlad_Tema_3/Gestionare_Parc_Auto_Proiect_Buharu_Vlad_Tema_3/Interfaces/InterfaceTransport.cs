@@ -54,7 +54,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
                 txtProductTransport.Text = dtGridList.SelectedRows[0].Cells[1].Value.ToString();
                 txtQuantityTransport.Text = dtGridList.SelectedRows[0].Cells[2].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception ArgumentOutOfRangeException)
             {
                 MessageBox.Show(@"Click only in the left side of the window, next to id", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

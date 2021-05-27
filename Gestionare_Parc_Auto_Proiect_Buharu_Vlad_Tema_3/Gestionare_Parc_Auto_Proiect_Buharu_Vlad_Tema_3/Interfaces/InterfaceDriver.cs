@@ -133,7 +133,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
                     {
                         string Driver = (string)r["FirstName"] + " " 
                             + (string)r["SecondName"] + "," 
-                            + (DateTime)r["BirthDay"] + "," 
+                            + (string)r["BirthDay"] + "," 
                             + (Int64)r["Salary"] + "," 
                             + (string)r["Adress"];
                         DriversTxt.Add(Driver);

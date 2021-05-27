@@ -41,8 +41,8 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnUpdateDriver = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteDriver = new System.Windows.Forms.ToolStripButton();
             this.btnAddCar = new System.Windows.Forms.ToolStripButton();
-            this.dtGridList = new System.Windows.Forms.DataGridView();
             this.btnSerializareTxtDriver = new System.Windows.Forms.ToolStripButton();
+            this.dtGridList = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             this.SuspendLayout();
@@ -143,15 +143,6 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnAddCar.Text = "AddCar";
             this.btnAddCar.Click += new System.EventHandler(this.BtnAddCar_Click);
             // 
-            // dtGridList
-            // 
-            this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridList.Location = new System.Drawing.Point(12, 28);
-            this.dtGridList.Name = "dtGridList";
-            this.dtGridList.Size = new System.Drawing.Size(776, 322);
-            this.dtGridList.TabIndex = 6;
-            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
-            // 
             // btnSerializareTxtDriver
             // 
             this.btnSerializareTxtDriver.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -161,6 +152,15 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3.Interfaces
             this.btnSerializareTxtDriver.Size = new System.Drawing.Size(23, 22);
             this.btnSerializareTxtDriver.Text = "Serializare Txt Driver";
             this.btnSerializareTxtDriver.Click += new System.EventHandler(this.BtnSerializareTxtDriver_Click);
+            // 
+            // dtGridList
+            // 
+            this.dtGridList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridList.Location = new System.Drawing.Point(12, 28);
+            this.dtGridList.Name = "dtGridList";
+            this.dtGridList.Size = new System.Drawing.Size(776, 322);
+            this.dtGridList.TabIndex = 6;
+            this.dtGridList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridList_CellClick);
             // 
             // InterfaceDriver
             // 

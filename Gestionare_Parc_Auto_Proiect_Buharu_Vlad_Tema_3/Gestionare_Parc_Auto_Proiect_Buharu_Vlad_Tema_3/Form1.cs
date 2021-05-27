@@ -8,6 +8,12 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
 {
     public partial class loginFrom : Form
     {
+        private static string userName;
+
+        public static string getUsername()
+        {
+            return userName;
+        }
         public loginFrom()
         {
             InitializeComponent();
@@ -54,6 +60,7 @@ namespace Gestionare_Parc_Auto_Proiect_Buharu_Vlad_Tema_3
                     {
                         MessageBox.Show(txtUsername.Text, @"Message",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        userName = txtUsername.Text;
                         Dashbord dashbord = new Dashbord();
                         dashbord.Show();
                     }
